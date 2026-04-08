@@ -12,7 +12,7 @@ export const papers = [
     title: "The Voices Within: The History and Science of How We Talk to Ourselves",
     dimension: ["D1", "D2"],
     relevance: "Foundational work on inner speech as condensed, fragmented internal dialogue evolving from Vygotskian egocentric speech. Central to the verbal-internal channel.",
-    doi: "10.1177/0959354316677460"
+    doi: null
   },
   {
     id: "morin-michaud-2007",
@@ -66,7 +66,7 @@ export const papers = [
     title: "Spatial versus object visualizers: A new characterization of visual cognitive style",
     dimension: ["D1"],
     relevance: "Distinguishes visual-spatial from verbal cognitive styles, showing these represent distinct processing preferences with different neural substrates.",
-    doi: "10.3758/BF03194024"
+    doi: "10.3758/bf03195337"
   },
   {
     id: "zeman-2015",
@@ -84,7 +84,7 @@ export const papers = [
     title: "Phantasia — The psychological significance of lifelong visual imagery vividness extremes",
     dimension: ["D1"],
     relevance: "Shows that aphantasic individuals use compensatory abstract strategies, confirming abstract-propositional thinking as a distinct cognitive channel.",
-    doi: "10.1016/j.cortex.2019.11.015"
+    doi: "10.1016/j.cortex.2020.04.003"
   },
   {
     id: "varela-1991",
@@ -93,7 +93,7 @@ export const papers = [
     title: "The Embodied Mind: Cognitive Science and Human Experience",
     dimension: ["D1"],
     relevance: "Foundational text for embodied cognition — the idea that thinking passes through the body and is constituted by sensorimotor interaction, not just brain computation.",
-    doi: null
+    doi: "10.7551/mitpress/9780262529365.001.0001"
   },
   {
     id: "lakoff-johnson-1999",
@@ -111,7 +111,7 @@ export const papers = [
     title: "Hearing Gesture: How Our Hands Help Us Think",
     dimension: ["D1"],
     relevance: "Demonstrates that gestures are not mere accompaniment to thought — they actively influence and shape cognitive processes.",
-    doi: null
+    doi: "10.2307/j.ctv1w9m9ds"
   },
   {
     id: "damasio-1994",
@@ -156,7 +156,7 @@ export const papers = [
     title: "Differences in auditory imagery self-report predict neural and behavioral outcomes",
     dimension: ["D1"],
     relevance: "Establishes auditory imagery — hearing sounds in the mind — as a measurable cognitive substrate, supporting the auditory-rhythmic thinking channel.",
-    doi: "10.1111/psyp.12391"
+    doi: "10.1037/pmu0000081"
   },
   {
     id: "hadamard-1945",
@@ -165,7 +165,7 @@ export const papers = [
     title: "The Psychology of Invention in the Mathematical Field",
     dimension: ["D1"],
     relevance: "Classic work on mathematical thinking as a paradigmatic case of abstract-propositional thought without sensory support.",
-    doi: null
+    doi: "10.2307/j.ctvzsmf1c"
   },
   {
     id: "rizzolatti-craighero-2004",
@@ -277,7 +277,7 @@ export const papers = [
     title: "Teachable agents and the protege effect: Increasing the effort towards learning",
     dimension: ["D2"],
     relevance: "Demonstrates the protege effect: teaching improves the teacher's own understanding, validating teaching-to-think as a cognitive strategy.",
-    doi: "10.1002/acp.1507"
+    doi: "10.1007/s10956-009-9180-4"
   },
   {
     id: "duran-2017",
@@ -295,7 +295,7 @@ export const papers = [
     title: "How to Solve It: A New Aspect of Mathematical Method",
     dimension: ["D2"],
     relevance: "Classic text on decomposition as a problem-solving strategy, foundational for the deconstructive/reverse-engineering approach.",
-    doi: null
+    doi: "10.1515/9781400828678"
   },
   {
     id: "ratcliff-1978",
@@ -349,7 +349,7 @@ export const papers = [
     title: "Structure-mapping: A theoretical framework for analogy",
     dimension: ["D2", "D5"],
     relevance: "Establishes structure-mapping theory: analogy transfers structural relations between domains, not superficial attributes.",
-    doi: "10.1016/0364-0213(83)90009-3"
+    doi: "10.1016/s0364-0213(83)80009-3"
   },
   {
     id: "green-2010",
@@ -358,7 +358,7 @@ export const papers = [
     title: "Connecting long distance: Semantic distance in analogical reasoning modulates frontopolar cortex activity",
     dimension: ["D2", "D5"],
     relevance: "Identifies rostrolateral prefrontal cortex activation during analogical reasoning, providing neural evidence for analogy as a distinct cognitive operation.",
-    doi: "10.1093/cercor/bhq081"
+    doi: "10.1093/cercor/bhp081"
   },
   {
     id: "lakoff-johnson-1980",
@@ -385,7 +385,7 @@ export const papers = [
     title: "Torrance Tests of Creative Thinking",
     dimension: ["D2", "D3"],
     relevance: "Defines fluency, flexibility, and originality as measurable dimensions of divergent thinking, establishing empirical assessment of creative cognition.",
-    doi: null
+    doi: "10.1037/t05532-000"
   },
   {
     id: "beaty-2016",
@@ -430,7 +430,7 @@ export const papers = [
     title: "Actual Minds, Possible Worlds",
     dimension: ["D2"],
     relevance: "Distinguishes paradigmatic (logical) from narrative thinking as two fundamental cognitive modes, establishing narrative as a legitimate reasoning strategy.",
-    doi: null
+    doi: "10.4159/9780674029019"
   },
   {
     id: "sarbin-1986",
@@ -502,7 +502,7 @@ export const papers = [
     title: "Performing a project premortem",
     dimension: ["D2"],
     relevance: "Introduces the pre-mortem technique — imagining failure to identify causes — as a structured application of prospective mental simulation.",
-    doi: null
+    doi: "10.1109/emr.2008.4534313"
   },
   {
     id: "chase-simon-1973",
@@ -538,7 +538,7 @@ export const papers = [
     title: "Sources of Power: How People Make Decisions",
     dimension: ["D2"],
     relevance: "Introduces recognition-primed decision making — experts decide by recognizing familiar patterns rather than analyzing options — supporting pattern-recognition strategy.",
-    doi: null
+    doi: "10.7551/mitpress/11307.001.0001"
   },
   {
     id: "von-neumann-morgenstern-1944",
@@ -556,7 +556,7 @@ export const papers = [
     title: "Towards a competitive arousal model of decision-making: A study of auction fever in live and Internet auctions",
     dimension: ["D2"],
     relevance: "Demonstrates competitive arousal effects on cognitive performance, supporting competition as a thinking activator.",
-    doi: "10.1016/j.obhdp.2005.04.001"
+    doi: "10.1016/j.obhdp.2004.10.001"
   },
   {
     id: "deterding-2011",
@@ -574,7 +574,7 @@ export const papers = [
     title: "Les jeux et les hommes: Le masque et le vertige",
     dimension: ["D2"],
     relevance: "Classifies competition (agon) as a fundamental form of play, providing philosophical grounding for competitive thinking.",
-    doi: null
+    doi: "10.14375/np.9782072643095"
   },
   {
     id: "flavell-1979",
@@ -637,7 +637,7 @@ export const papers = [
     title: "Back to the future: Temporal perspective in the explanation of events",
     dimension: ["D2", "D3"],
     relevance: "Shows prospective hindsight increases causal identification by 30%, supporting temporal-scale shifting and pre-mortem as cognitive strategies.",
-    doi: "10.1002/bdm.3960020106"
+    doi: "10.1002/bdm.3960020103"
   },
   {
     id: "norem-cantor-1986",
@@ -722,7 +722,7 @@ export const papers = [
     title: "Rostrolateral prefrontal cortex involvement in relational integration during reasoning",
     dimension: ["D3"],
     relevance: "Identifies neural correlates of relational complexity and abstract reasoning in rostral prefrontal cortex.",
-    doi: "10.1006/nimg.2001.0745"
+    doi: "10.1006/nimg.2001.0922"
   },
   {
     id: "paivio-1971",
@@ -852,7 +852,7 @@ export const papers = [
     title: "Reopening inquiry into cognitive processes in writing-to-learn",
     dimension: ["D4"],
     relevance: "Reviews writing-to-learn research showing writing activates distinct metacognitive processes, supporting writing as a thinking medium.",
-    doi: "10.1207/S15326985EP3403_3"
+    doi: "10.1023/a:1021913217147"
   },
   {
     id: "bangert-drowns-2004",
@@ -973,7 +973,7 @@ export const papers = [
     title: "Principles of categorization",
     dimension: ["D5"],
     relevance: "Establishes prototype theory of categorization as a form of inductive reasoning — categories have graded structure, not sharp boundaries.",
-    doi: null
+    doi: "10.4324/9781032633275-4"
   },
   {
     id: "lipton-2004",
@@ -1000,7 +1000,7 @@ export const papers = [
     title: "Case-Based Reasoning",
     dimension: ["D5"],
     relevance: "Develops case-based reasoning in AI — solving new problems using past cases — a computational formalization of analogical logical form.",
-    doi: "10.1016/C2009-0-27670-7"
+    doi: null
   },
   {
     id: "lipton-1990",
@@ -1076,7 +1076,7 @@ export const papers = [
     title: "Pre-performance routines in sport: Current understanding and future directions",
     dimension: ["CF"],
     relevance: "Reviews pre-performance routines in sport showing how rituals prepare cognitive and motor systems for optimal performance.",
-    doi: "10.1080/1612197X.2010.9671934"
+    doi: "10.1080/1750984x.2010.488269"
   },
   {
     id: "brooks-2016",
@@ -1103,7 +1103,7 @@ export const papers = [
     title: "Rethinking procrastination: Positive effects of 'active' procrastination behavior on attitudes and performance",
     dimension: ["CF"],
     relevance: "Identifies active procrastination — some people perform better under deadline pressure — supporting time constraints as a facilitating condition.",
-    doi: "10.1080/00223980509600480"
+    doi: "10.3200/socp.145.3.245-264"
   },
   {
     id: "lutz-2008",
@@ -1130,7 +1130,7 @@ export const papers = [
     title: "Meditation, mindfulness and cognitive flexibility",
     dimension: ["CF"],
     relevance: "Demonstrates mindfulness practice improves cognitive flexibility, supporting meditation as a facilitating condition for thinking.",
-    doi: "10.1016/j.concog.2008.12.006"
+    doi: "10.1016/j.concog.2008.12.008"
   },
   {
     id: "smallwood-schooler-2006",
@@ -1166,7 +1166,7 @@ export const papers = [
     title: "Social baseline theory: The social regulation of human body and brain function",
     dimension: ["CF"],
     relevance: "Proposes the brain evolved expecting the presence of others, making social context a baseline facilitating condition for cognition.",
-    doi: "10.1177/1948550614548517"
+    doi: "10.1016/j.copsyc.2014.12.021"
   },
   {
     id: "oppezzo-schwartz-2014",
@@ -1206,7 +1206,7 @@ export const papers = [
     title: "The dimensions of perfectionism",
     dimension: ["D2"],
     relevance: "Characterizes cognitive perfectionism including its adaptive dimension, relevant to high-threshold reflective thinking patterns.",
-    doi: "10.1016/0005-7967(90)90137-7"
+    doi: "10.1007/bf01172967"
   },
   {
     id: "hutchins-1995",
@@ -1251,7 +1251,7 @@ export const papers = [
     title: "Cognitive Styles and Learning Strategies: Understanding Style Differences in Learning and Behaviour",
     dimension: ["D2"],
     relevance: "Characterizes analytic vs. holistic cognitive styles, relevant to understanding taxonomic/classificatory thinking patterns.",
-    doi: null
+    doi: "10.4324/9781315068015"
   },
   {
     id: "baron-cohen-2003",
