@@ -604,6 +604,34 @@
       "desc": "You think by building and prototyping, but need to express through words",
       "gap_level": "MEDIUM-HIGH",
       "strategy": "Describe what you'd build step by step: \"First I'd take this piece, connect it to that...\" Use the construction process as your narrative."
+    },
+    "diagram_to_text": {
+      "desc": "You want to diagram but must communicate in sequential text.",
+      "strategy": "Describe spatial structure in words: \"Imagine a diagram where X is at the center, connected to Y and Z...\" Use bullet lists and indentation to mimic visual hierarchy."
+    },
+    "voice_to_text": {
+      "desc": "You prefer talking but must communicate in writing.",
+      "strategy": "Use dictation tools to capture your verbal flow, then structure the resulting text. With an LLM: write as you would speak, then ask it to reorganize."
+    },
+    "somatic_to_text": {
+      "desc": "Your intuitions are bodily sensations that you struggle to translate into prompts or text.",
+      "strategy": "Translate feelings into scales: \"On a scale of 1-10, how convinced am I?\" Then ask the LLM: \"I have a strong gut feeling that X is right — help me understand why.\""
+    },
+    "voice_to_writing": {
+      "desc": "You lose quality when writing instead of speaking.",
+      "strategy": "Speak first, write second: record your verbal explanation, then transcribe and structure it. Your thinking is already formed — it just needs translation to the medium."
+    },
+    "writing_to_voice": {
+      "desc": "You lose structure when speaking instead of writing.",
+      "strategy": "Prepare a written outline before speaking. Use notes as anchors. Your thinking is structured on the page — bring that scaffold into your speech."
+    },
+    "physical_to_verbal": {
+      "desc": "You struggle to describe in words what you could build or prototype.",
+      "strategy": "Build first, explain after: make the prototype, then document it step by step. With an LLM: \"I built X that works like this — help me explain why it works.\""
+    },
+    "none": {
+      "desc": "No significant gap detected between your cognitive channel and your externalization medium.",
+      "strategy": "Natural alignment. Keep leveraging this coherence."
     }
   },
   "results": {

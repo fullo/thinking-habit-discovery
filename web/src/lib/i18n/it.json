@@ -649,6 +649,38 @@
       "level": "NESSUNO",
       "desc": "Allineamento naturale",
       "strategy": "Allineamento naturale."
+    },
+    "diagram_to_text": {
+      "desc": "Vorresti schematizzare ma devi comunicare in testo sequenziale.",
+      "strategy": "Descrivi la struttura spaziale a parole: \"Immagina un diagramma dove al centro c'e X, collegato a Y e Z...\" Usa elenchi e indentazione per mimare la gerarchia visiva."
+    },
+    "voice_to_text": {
+      "desc": "Preferiresti discuterne a voce ma devi comunicare per iscritto.",
+      "strategy": "Usa strumenti di dettatura per catturare il tuo flusso verbale, poi struttura il testo risultante. Con un LLM: scrivi come parleresti, poi chiedi di riorganizzare."
+    },
+    "somatic_to_text": {
+      "desc": "Le tue intuizioni sono sensazioni corporee che non riesci a tradurre in prompt o testo.",
+      "strategy": "Traduci le sensazioni in scale: \"Da 1 a 10, quanto mi convince questa opzione?\" Poi chiedi al LLM: \"Ho una forte intuizione che X sia giusto — aiutami a capire perché.\""
+    },
+    "voice_to_writing": {
+      "desc": "Perdi qualita quando devi scrivere invece di parlare.",
+      "strategy": "Parla prima, scrivi dopo: registra la tua spiegazione orale, poi trascrivila e strutturala. Il tuo pensiero e gia formato — serve solo la traduzione nel medium."
+    },
+    "writing_to_voice": {
+      "desc": "Perdi struttura quando devi parlare invece di scrivere.",
+      "strategy": "Prepara una scaletta scritta prima di parlare. Usa appunti come ancoraggi. Il tuo pensiero e strutturato sulla pagina — portati quel supporto nel parlato."
+    },
+    "physical_to_verbal": {
+      "desc": "Non riesci a descrivere a parole quello che sapresti costruire o prototipare.",
+      "strategy": "Costruisci prima, spiega dopo: fai il prototipo, poi documentalo passo passo. Con un LLM: \"Ho costruito X che funziona cosi — aiutami a spiegare perche funziona.\""
+    },
+    "none": {
+      "desc": "Nessun gap significativo rilevato tra il tuo canale cognitivo e il tuo medium di esternalizzazione.",
+      "strategy": "Allineamento naturale. Continua a sfruttare questa coerenza."
+    },
+    "somatic_to_formal": {
+      "desc": "Quello che \"senti\" giusto non diventa un argomento formale.",
+      "strategy": "Parti dalla sensazione e costruisci a ritroso: \"Sento che X e sbagliato. Perche? Forse perche viola il principio Y.\" Usa il LLM come traduttore intuitivo-razionale."
     }
   },
   "results": {
