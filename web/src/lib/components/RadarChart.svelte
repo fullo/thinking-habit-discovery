@@ -20,19 +20,15 @@
 		return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
 	}
 
-	function maxScore(dim) {
-		const top = profile[dim]?.[0];
+	$: dimScores = dims.map((d) => {
+		const top = profile[d]?.[0];
 		return top ? top.count : 0;
-	}
+	});
 
-	$: maxPossible = Math.max(
-		...dims.map((d) => maxScore(d)),
-		1
-	);
+	$: maxPossible = Math.max(...dimScores, 1);
 
 	$: dataPoints = dims.map((d, i) => {
-		const score = maxScore(d);
-		const r = (score / maxPossible) * radius;
+		const r = (dimScores[i] / maxPossible) * radius;
 		return pointAt(i, r);
 	});
 

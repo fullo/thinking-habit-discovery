@@ -28,15 +28,14 @@
 		: '';
 
 	onMount(() => {
-		// If URL has encoded answers, load them into the quiz store
 		const urlParams = new URLSearchParams(window.location.search);
 		const encoded = urlParams.get('a');
-		if (encoded && Object.keys($quiz.answers).length === 0) {
-			quiz.loadFromEncoded(decodeURIComponent(encoded));
-		}
 
-		// Update URL with current answers (without navigation)
-		if (Object.keys($quiz.answers).length > 0 && !encoded) {
+		if (encoded) {
+			// Always load from URL params — this is the shareable link flow
+			quiz.loadFromEncoded(decodeURIComponent(encoded));
+		} else if (Object.keys($quiz.answers).length > 0) {
+			// User just finished quiz — persist answers to URL
 			const newUrl = `${window.location.pathname}?a=${encodeURIComponent(encodeAnswers($quiz.answers))}`;
 			window.history.replaceState({}, '', newUrl);
 		}

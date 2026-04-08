@@ -31,7 +31,9 @@
     "progress": "Domanda {current} di {total}",
     "pageTitle": "Questionario",
     "deepeningTitle": "Approfondimento",
-    "deepeningSubtitle": "In base alle tue risposte, abbiamo qualche domanda in più"
+    "deepeningSubtitle": "In base alle tue risposte, abbiamo qualche domanda in più",
+    "deepeningOptional": "Queste domande sono facoltative — salta se nessuna ti rappresenta.",
+    "validationError": "Rispondi a tutte le domande prima di continuare."
   },
   "questions": {
     "A1": {
@@ -678,7 +680,9 @@
     "title": "Condividi il tuo profilo",
     "text": "Ho scoperto il mio profilo di pensiero!",
     "cta": "Scopri il tuo:",
-    "copy": "Copia"
+    "copy": "Copia",
+    "urlNote": "Il link qui sopra rigenera il tuo profilo esatto.",
+    "copied": "Copiato!"
   },
   "about": {
     "title": "About",
