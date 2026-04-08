@@ -1,5 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { t } from '$lib/stores/locale.js';
 	import { quiz } from '$lib/stores/quiz.js';
 	import { questions, sections } from '$lib/data/questions.js';
@@ -14,7 +15,7 @@
 	function next() {
 		if (isLast) {
 			quiz.nextSection();
-			goto('/results');
+			goto(`${base}/results`);
 		} else {
 			quiz.nextSection();
 			if (typeof window !== 'undefined') {

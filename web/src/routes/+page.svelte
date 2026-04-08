@@ -1,5 +1,6 @@
 <script>
 	import { t } from '$lib/stores/locale.js';
+	import { base } from '$app/paths';
 </script>
 
 <section class="landing">
@@ -28,7 +29,7 @@
 		<p>{$t('landing.info')}</p>
 	</div>
 
-	<a href="/quiz" class="cta">{$t('app.startQuiz')}</a>
+	<a href="{base}/quiz" class="cta">{$t('app.startQuiz')}</a>
 </section>
 
 <style>

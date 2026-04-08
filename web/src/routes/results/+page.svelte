@@ -1,5 +1,6 @@
 <script>
 	import { t } from '$lib/stores/locale.js';
+	import { base } from '$app/paths';
 	import { quiz, profile } from '$lib/stores/quiz.js';
 	import RadarChart from '$lib/components/RadarChart.svelte';
 	import ProfileCard from '$lib/components/ProfileCard.svelte';
@@ -31,7 +32,7 @@
 	<LlmStrategies profile={p} />
 
 	<div class="actions">
-		<a href="/quiz" class="btn btn-secondary" on:click={retake}>
+		<a href="{base}/quiz" class="btn btn-secondary" on:click={retake}>
 			{$t('results.retake')}
 		</a>
 	</div>

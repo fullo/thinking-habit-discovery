@@ -1,5 +1,6 @@
 <script>
 	import { t, locale } from '$lib/stores/locale.js';
+	import { base } from '$app/paths';
 	import LanguageSwitch from '$lib/components/LanguageSwitch.svelte';
 
 	$: if (typeof document !== 'undefined') {
@@ -12,7 +13,7 @@
 </svelte:head>
 
 <header class="site-header">
-	<a href="/" class="logo">{$t('app.title')}</a>
+	<a href="{base}/" class="logo">{$t('app.title')}</a>
 	<LanguageSwitch />
 </header>
 

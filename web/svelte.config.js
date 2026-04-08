@@ -6,9 +6,9 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: 'index.html',
+			fallback: '404.html',
 			precompress: true,
-			strict: true
+			strict: false
 		}),
 		paths: {
 			base: process.env.BASE_PATH || ''
