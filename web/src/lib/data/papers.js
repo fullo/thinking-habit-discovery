@@ -48,7 +48,7 @@ export const papers = [
     title: "Image and Brain: The Resolution of the Imagery Debate",
     dimension: ["D1"],
     relevance: "Demonstrates that mental images activate primary visual cortex, establishing the neurological basis of visual-spatial thinking as a genuine cognitive channel.",
-    doi: null
+    doi: "10.7551/mitpress/3653.001.0001"
   },
   {
     id: "grandin-2006",
@@ -241,7 +241,7 @@ export const papers = [
     title: "Generation and precision of elaborative interrogation",
     dimension: ["D2"],
     relevance: "Shows that asking 'why?' (elaborative interrogation) significantly improves comprehension and learning, supporting the Socratic strategy.",
-    doi: null
+    doi: "10.1037/0278-7393.13.2.291"
   },
   {
     id: "chi-1989",
@@ -367,7 +367,7 @@ export const papers = [
     title: "Metaphors We Live By",
     dimension: ["D2", "D5"],
     relevance: "Shows that conceptual metaphors structure everyday thought — we understand abstract concepts through embodied metaphorical mappings.",
-    doi: null
+    doi: "10.7208/chicago/9780226470993.001.0001"
   },
   {
     id: "osborn-1953",
@@ -592,7 +592,7 @@ export const papers = [
     title: "Metamemory: A theoretical framework and new findings",
     dimension: ["D2"],
     relevance: "Develops the theoretical framework for metamemory and metacognitive monitoring, supporting metacognition as an active thinking strategy.",
-    doi: null
+    doi: "10.1016/S0079-7421(08)60053-5"
   },
   {
     id: "zimmerman-2002",
@@ -731,7 +731,7 @@ export const papers = [
     title: "Imagery and Verbal Processes",
     dimension: ["D3"],
     relevance: "Introduces dual coding theory and the concreteness effect — concrete concepts are more easily processed — supporting the concretizing direction.",
-    doi: null
+    doi: "10.4324/9781315798868"
   },
   {
     id: "medin-schaffer-1978",
@@ -946,7 +946,7 @@ export const papers = [
     title: "The Psychology of Proof: Deductive Reasoning in Human Thinking",
     dimension: ["D5"],
     relevance: "Proposes mental logic theory — people use innate inference rules for deductive reasoning — one of two competing models of logical thought.",
-    doi: null
+    doi: "10.7551/mitpress/5680.001.0001"
   },
   {
     id: "goel-2007",
@@ -982,7 +982,7 @@ export const papers = [
     title: "Inference to the Best Explanation",
     dimension: ["D5"],
     relevance: "Comprehensive treatment of abductive reasoning — inference to the best explanation — establishing it as a distinct and pervasive logical form.",
-    doi: null
+    doi: "10.4324/9780203470855"
   },
   {
     id: "magnani-2001",
@@ -991,7 +991,7 @@ export const papers = [
     title: "Abduction, Reason and Science: Processes of Discovery and Explanation",
     dimension: ["D5"],
     relevance: "Develops abductive reasoning theory following Peirce, arguing most everyday reasoning is abductive rather than deductive.",
-    doi: null
+    doi: "10.1007/978-1-4419-8562-0"
   },
   {
     id: "kolodner-1993",
@@ -1000,7 +1000,7 @@ export const papers = [
     title: "Case-Based Reasoning",
     dimension: ["D5"],
     relevance: "Develops case-based reasoning in AI — solving new problems using past cases — a computational formalization of analogical logical form.",
-    doi: null
+    doi: "10.1016/C2009-0-27670-7"
   },
   {
     id: "lipton-1990",
@@ -1009,7 +1009,7 @@ export const papers = [
     title: "Contrastive explanation",
     dimension: ["D5"],
     relevance: "Formalizes contrastive explanation — explaining why X rather than Y — supporting contrastive/negation thinking patterns.",
-    doi: null
+    doi: "10.1017/S1358246100005130"
   },
 
   // ============================================================
@@ -1085,7 +1085,7 @@ export const papers = [
     title: "Don't stop believing: Rituals improve performance by decreasing anxiety",
     dimension: ["CF"],
     relevance: "Shows rituals reduce performance anxiety and improve outcomes, supporting ritualized processes as cognitive facilitating conditions.",
-    doi: null
+    doi: "10.1016/j.obhdp.2016.07.004"
   },
   {
     id: "yerkes-dodson-1908",
@@ -1148,7 +1148,7 @@ export const papers = [
     title: "Biological bases of creativity",
     dimension: ["CF"],
     relevance: "Shows diffuse attention (vs. focused) favors remote associations, supporting mind-wandering as a facilitating condition for creative connections.",
-    doi: null
+    doi: "10.1017/CBO9780511807916.009"
   },
   {
     id: "zajonc-1965",
@@ -1197,7 +1197,7 @@ export const papers = [
     title: "Rationality and the Reflective Mind",
     dimension: ["D2"],
     relevance: "Proposes the tripartite mind model with a reflective mind layer, supporting metacognitive and reflective thinking strategies.",
-    doi: null
+    doi: "10.1093/acprof:oso/9780195341140.001.0001"
   },
   {
     id: "frost-1990",
@@ -1215,7 +1215,7 @@ export const papers = [
     title: "Cognition in the Wild",
     dimension: ["D2", "D4"],
     relevance: "Foundational text for distributed cognition — cognitive processes spread across individuals and artifacts, not contained in a single head.",
-    doi: null
+    doi: "10.7551/mitpress/1881.001.0001"
   },
   {
     id: "wegner-1987",
@@ -1224,7 +1224,7 @@ export const papers = [
     title: "Transactive memory: A contemporary analysis of the group mind",
     dimension: ["D2"],
     relevance: "Introduces transactive memory systems — groups develop shared knowledge of 'who knows what' — supporting socially distributed thinking.",
-    doi: null
+    doi: "10.1007/978-1-4612-4634-3_9"
   },
   {
     id: "collins-loftus-1975",

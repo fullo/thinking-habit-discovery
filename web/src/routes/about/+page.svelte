@@ -22,6 +22,7 @@
 
 <svelte:head>
 	<title>{$t('about.title')} — {$t('app.title')}</title>
+	<meta name="description" content={$t('about.intro')} />
 </svelte:head>
 
 <article class="about-page">

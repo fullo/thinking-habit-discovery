@@ -3,6 +3,14 @@
 	import { base } from '$app/paths';
 </script>
 
+<svelte:head>
+	<title>{$t('app.title')}</title>
+	<meta name="description" content={$t('app.subtitle')} />
+	<meta property="og:title" content={$t('app.title')} />
+	<meta property="og:description" content={$t('app.subtitle')} />
+	<meta property="og:type" content="website" />
+</svelte:head>
+
 <section class="landing">
 	<h1>{$t('app.title')}</h1>
 	<p class="subtitle">{$t('app.subtitle')}</p>

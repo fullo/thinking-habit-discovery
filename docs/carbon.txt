@@ -1,0 +1,11 @@
+version = "0.5"
+
+[upstream]
+services = [
+  { domain = "github.com", service_type = "shared-hosting" }
+]
+
+[org]
+disclosures = [
+  { doc_type = "web-page", url = "https://github.blog/news-insights/environment/", domain = "github.com" }
+]

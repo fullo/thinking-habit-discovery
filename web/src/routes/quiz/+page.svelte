@@ -32,6 +32,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{$t('quiz.pageTitle') || 'Quiz'} — {$t('app.title')}</title>
+	<meta name="description" content={$t('quiz.instruction')} />
+</svelte:head>
+
 <div class="quiz-page" aria-live="polite">
 	<ProgressBar currentSection={currentSection} />
 

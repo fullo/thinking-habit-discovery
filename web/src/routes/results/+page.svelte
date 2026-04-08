@@ -26,6 +26,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{$t('results.title')} — {$t('app.title')}</title>
+	<meta name="description" content={$t('results.pageDesc') || 'Your thinking profile results across 5 cognitive dimensions'} />
+</svelte:head>
+
 <div class="results-page">
 	<h1>{$t('results.title')}</h1>
 

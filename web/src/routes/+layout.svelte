@@ -68,7 +68,7 @@
 			--bg: #111827;
 			--bg-hover: #1f2937;
 			--border: #374151;
-			--accent: #818cf8;
+			--accent: #6d7bf7;
 			--accent-light: #6366f1;
 			--accent-bg: #1e1b4b;
 			--warning: #fbbf24;
@@ -81,7 +81,7 @@
 		--bg: #111827;
 		--bg-hover: #1f2937;
 		--border: #374151;
-		--accent: #818cf8;
+		--accent: #6d7bf7;
 		--accent-light: #6366f1;
 		--accent-bg: #1e1b4b;
 		--warning: #fbbf24;
