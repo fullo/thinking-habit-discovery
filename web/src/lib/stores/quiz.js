@@ -38,6 +38,37 @@ function computeScores(answers) {
 	return dims;
 }
 
+/**
+ * Encode answers as compact URL query string.
+ * Format: ?a=Q1:0,1|Q2:2|Q3:0...
+ * Each question ID followed by colon and selected option indices.
+ */
+export function encodeAnswers(answers) {
+	const parts = [];
+	for (const [qId, selected] of Object.entries(answers)) {
+		if (selected && selected.length > 0) {
+			parts.push(`${qId}:${selected.join(',')}`);
+		}
+	}
+	return parts.join('|');
+}
+
+/**
+ * Decode answers from URL query string back to answers object.
+ */
+export function decodeAnswers(encoded) {
+	if (!encoded) return {};
+	const answers = {};
+	const parts = encoded.split('|');
+	for (const part of parts) {
+		const [qId, indices] = part.split(':');
+		if (qId && indices) {
+			answers[qId] = indices.split(',').map(Number).filter((n) => !isNaN(n));
+		}
+	}
+	return answers;
+}
+
 function createQuizStore() {
 	const { subscribe, set, update } = writable({
 		answers: {},
@@ -63,6 +94,16 @@ function createQuizStore() {
 				}
 				return { ...state, answers: { ...state.answers, [questionId]: updated } };
 			});
+		},
+		/**
+		 * Check if all questions in current view have at least 1 answer.
+		 * Returns { valid, unanswered } where unanswered is the list of question IDs missing answers.
+		 */
+		validateCurrentSection(state, currentQuestions) {
+			const unanswered = currentQuestions.filter(
+				(q) => !state.answers[q.id] || state.answers[q.id].length === 0
+			);
+			return { valid: unanswered.length === 0, unanswered: unanswered.map((q) => q.id) };
 		},
 		nextSection() {
 			update((state) => {
@@ -96,6 +137,11 @@ function createQuizStore() {
 				}
 				return { ...state, currentSection: Math.max(0, state.currentSection - 1) };
 			});
+		},
+		/** Load answers from encoded string (for URL sharing) */
+		loadFromEncoded(encoded) {
+			const answers = decodeAnswers(encoded);
+			set({ answers, currentSection: sections.length - 1, completed: true, deepeningQuestions: [], inDeepening: false });
 		},
 		reset() {
 			set({ answers: {}, currentSection: 0, completed: false, deepeningQuestions: [], inDeepening: false });

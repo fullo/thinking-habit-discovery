@@ -2,21 +2,22 @@
 	import { t } from '$lib/stores/locale.js';
 
 	export let profileSummary = '';
+	export let shareUrl = '';
 
-	const quizUrl = 'https://fullo.github.io/thinking-habit-discovery/quiz';
+	$: displayUrl = shareUrl || 'https://fullo.github.io/thinking-habit-discovery/quiz';
+	$: shareText = `${$t('share.text')}\n\n${profileSummary}`;
+	$: fullShareText = `${shareText}\n\n${$t('share.cta')}\n${displayUrl}`;
 
-	$: shareText = `${$t('share.text')}\n\n${profileSummary}\n\n${$t('share.cta')}\n${quizUrl}`;
-	$: twitterText = `${$t('share.text')}\n\n${profileSummary}\n\n${$t('share.cta')}`;
-	$: encodedTwitter = encodeURIComponent(twitterText);
-	$: encodedQuizUrl = encodeURIComponent(quizUrl);
+	$: encodedText = encodeURIComponent(shareText + '\n\n' + $t('share.cta'));
+	$: encodedUrl = encodeURIComponent(displayUrl);
 
-	$: twitterUrl = `https://twitter.com/intent/tweet?text=${encodedTwitter}&url=${encodedQuizUrl}`;
-	$: linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedQuizUrl}`;
+	$: twitterUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+	$: linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
 
 	let copied = false;
 
 	function copyToClipboard() {
-		navigator.clipboard.writeText(shareText);
+		navigator.clipboard.writeText(fullShareText);
 		copied = true;
 		setTimeout(() => copied = false, 2000);
 	}
@@ -39,6 +40,7 @@
 			{copied ? ($t('share.copied') || 'Copied!') : $t('share.copy')}
 		</button>
 	</div>
+	<p class="share-note">{$t('share.urlNote') || 'The link above will regenerate your exact profile.'}</p>
 </section>
 
 <style>
@@ -90,4 +92,10 @@
 	.twitter .share-icon { color: #1da1f2; }
 	.linkedin .share-icon { color: #0077b5; font-weight: 800; }
 	.copy { border-style: dashed; }
+	.share-note {
+		margin-top: 0.75rem;
+		font-size: 0.8rem;
+		color: var(--text-secondary);
+		font-style: italic;
+	}
 </style>

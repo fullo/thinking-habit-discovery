@@ -1,7 +1,9 @@
 <script>
+	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import { t } from '$lib/stores/locale.js';
 	import { base } from '$app/paths';
-	import { quiz, profile } from '$lib/stores/quiz.js';
+	import { quiz, profile, encodeAnswers } from '$lib/stores/quiz.js';
 	import { valueMetadata } from '$lib/data/profiles.js';
 	import RadarChart from '$lib/components/RadarChart.svelte';
 	import ProfileCard from '$lib/components/ProfileCard.svelte';
@@ -20,6 +22,25 @@
 		})
 		.filter(Boolean)
 		.join(' | ');
+
+	$: shareUrl = typeof window !== 'undefined'
+		? `${window.location.origin}${base}/results?a=${encodeURIComponent(encodeAnswers($quiz.answers))}`
+		: '';
+
+	onMount(() => {
+		// If URL has encoded answers, load them into the quiz store
+		const urlParams = new URLSearchParams(window.location.search);
+		const encoded = urlParams.get('a');
+		if (encoded && Object.keys($quiz.answers).length === 0) {
+			quiz.loadFromEncoded(decodeURIComponent(encoded));
+		}
+
+		// Update URL with current answers (without navigation)
+		if (Object.keys($quiz.answers).length > 0 && !encoded) {
+			const newUrl = `${window.location.pathname}?a=${encodeURIComponent(encodeAnswers($quiz.answers))}`;
+			window.history.replaceState({}, '', newUrl);
+		}
+	});
 
 	function retake() {
 		quiz.reset();
@@ -48,7 +69,7 @@
 
 	<LlmStrategies profile={p} />
 
-	<SocialShare {profileSummary} />
+	<SocialShare {profileSummary} {shareUrl} />
 
 	<div class="actions">
 		<a href="{base}/quiz" class="btn btn-secondary" on:click={retake}>

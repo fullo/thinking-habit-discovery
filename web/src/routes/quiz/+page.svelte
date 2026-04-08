@@ -11,16 +11,37 @@
 	$: inDeepening = $quiz.inDeepening;
 	$: deepeningQuestions = $quiz.deepeningQuestions;
 	$: section = sections[currentSection];
-	$: sectionQuestions = inDeepening ? deepeningQuestions : questions.filter((q) => q.section === section?.id);
+	$: currentQuestions = inDeepening ? deepeningQuestions : questions.filter((q) => q.section === section?.id);
 	$: isLast = currentSection === sections.length - 1 && !inDeepening;
 
+	let validationError = false;
+	let unansweredIds = [];
+
 	function next() {
-		if (isLast || ($quiz.completed)) {
+		// Validate: at least 1 answer per question in current section
+		// Deepening questions are optional
+		if (!inDeepening) {
+			const missing = currentQuestions.filter(
+				(q) => !$quiz.answers[q.id] || $quiz.answers[q.id].length === 0
+			);
+			if (missing.length > 0) {
+				validationError = true;
+				unansweredIds = missing.map((q) => q.id);
+				// Scroll to first unanswered
+				const el = document.getElementById('q-' + missing[0].id);
+				if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				return;
+			}
+		}
+
+		validationError = false;
+		unansweredIds = [];
+
+		if (isLast || $quiz.completed) {
 			quiz.nextSection();
 			goto(`${base}/results`);
 		} else {
 			quiz.nextSection();
-			// Check if we just completed and need to redirect
 			if ($quiz.completed) {
 				goto(`${base}/results`);
 				return;
@@ -32,6 +53,8 @@
 	}
 
 	function prev() {
+		validationError = false;
+		unansweredIds = [];
 		quiz.prevSection();
 		if (typeof window !== 'undefined') {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -56,6 +79,7 @@
 			<span class="section-letter deep">+</span>
 			{$t('quiz.deepeningSubtitle') || 'Based on your answers, we have a few more questions'}
 		</h2>
+		<p class="deepening-hint">{$t('quiz.deepeningOptional') || 'These questions are optional — skip if none apply.'}</p>
 	{:else}
 		<h2 class="section-title">
 			<span class="section-letter">{section?.id}</span>
@@ -63,8 +87,16 @@
 		</h2>
 	{/if}
 
-	{#each sectionQuestions as q (q.id)}
-		<Question question={q} answers={$quiz.answers[q.id] || []} />
+	{#if validationError}
+		<div class="validation-error" role="alert">
+			{$t('quiz.validationError') || 'Please answer all questions before continuing.'}
+		</div>
+	{/if}
+
+	{#each currentQuestions as q (q.id)}
+		<div class:unanswered={unansweredIds.includes(q.id)}>
+			<Question question={q} answers={$quiz.answers[q.id] || []} />
+		</div>
 	{/each}
 
 	<nav class="nav-buttons">
@@ -101,6 +133,12 @@
 	.badge-icon {
 		font-size: 0.9rem;
 	}
+	.deepening-hint {
+		font-size: 0.85rem;
+		color: var(--text-secondary);
+		margin-bottom: 1.5rem;
+		font-style: italic;
+	}
 	.section-title {
 		display: flex;
 		align-items: center;
@@ -124,6 +162,26 @@
 	}
 	.section-letter.deep {
 		background: var(--warning);
+	}
+	.validation-error {
+		padding: 0.75rem 1rem;
+		background: #fef2f2;
+		border: 1px solid #fca5a5;
+		border-radius: 8px;
+		color: #991b1b;
+		font-size: 0.9rem;
+		font-weight: 500;
+		margin-bottom: 1.5rem;
+	}
+	:global([data-theme="dark"]) .validation-error,
+	:global(:root:not([data-theme="light"])) .validation-error {
+		background: #450a0a;
+		border-color: #7f1d1d;
+		color: #fca5a5;
+	}
+	.unanswered :global(.question) {
+		border-left: 3px solid #ef4444;
+		padding-left: 0.75rem;
 	}
 	.nav-buttons {
 		display: flex;
