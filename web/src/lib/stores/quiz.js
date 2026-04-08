@@ -63,7 +63,7 @@ export function decodeAnswers(encoded) {
 	for (const part of parts) {
 		const [qId, indices] = part.split(':');
 		if (qId && indices) {
-			answers[qId] = indices.split(',').map(Number).filter((n) => !isNaN(n));
+			answers[qId] = indices.split(',').map(Number).filter((n) => !isNaN(n) && n >= 0 && n < 10);
 		}
 	}
 	return answers;
