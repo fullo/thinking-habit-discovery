@@ -3,19 +3,30 @@
 
 	export let profileSummary = '';
 
-	const siteUrl = 'https://fullo.github.io/thinking-habit-discovery/';
+	const quizUrl = 'https://fullo.github.io/thinking-habit-discovery/quiz';
 
-	$: text = `${$t('share.text')}\n\n${profileSummary}\n\n${$t('share.cta')}`;
-	$: encodedText = encodeURIComponent(text);
-	$: encodedUrl = encodeURIComponent(siteUrl);
+	$: shareText = `${$t('share.text')}\n\n${profileSummary}\n\n${$t('share.cta')}\n${quizUrl}`;
+	$: twitterText = `${$t('share.text')}\n\n${profileSummary}\n\n${$t('share.cta')}`;
+	$: encodedTwitter = encodeURIComponent(twitterText);
+	$: encodedQuizUrl = encodeURIComponent(quizUrl);
 
-	$: twitterUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
-	$: linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
-	$: mastodonText = `${text}\n${siteUrl}`;
+	$: twitterUrl = `https://twitter.com/intent/tweet?text=${encodedTwitter}&url=${encodedQuizUrl}`;
+	$: linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedQuizUrl}`;
+
+	let copied = false;
+
+	function copyToClipboard() {
+		navigator.clipboard.writeText(shareText);
+		copied = true;
+		setTimeout(() => copied = false, 2000);
+	}
 </script>
 
 <section class="share-section">
 	<h2>{$t('share.title')}</h2>
+	<div class="profile-preview">
+		<p>{profileSummary}</p>
+	</div>
 	<div class="share-buttons">
 		<a href={twitterUrl} target="_blank" rel="noopener noreferrer" class="share-btn twitter" aria-label="Share on X/Twitter">
 			<span class="share-icon">&#x1D54F;</span> X
@@ -23,10 +34,9 @@
 		<a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="share-btn linkedin" aria-label="Share on LinkedIn">
 			<span class="share-icon">in</span> LinkedIn
 		</a>
-		<button class="share-btn copy" on:click={() => {
-			navigator.clipboard.writeText(`${text}\n${siteUrl}`);
-		}} aria-label="Copy to clipboard">
-			<span class="share-icon">&#x2398;</span> {$t('share.copy')}
+		<button class="share-btn copy" on:click={copyToClipboard} aria-label="Copy to clipboard">
+			<span class="share-icon">{copied ? '\u2713' : '\u2398'}</span>
+			{copied ? ($t('share.copied') || 'Copied!') : $t('share.copy')}
 		</button>
 	</div>
 </section>
@@ -40,6 +50,15 @@
 	h2 {
 		font-size: 1.3rem;
 		margin-bottom: 0.75rem;
+	}
+	.profile-preview {
+		padding: 0.75rem 1rem;
+		background: var(--bg-hover);
+		border-radius: 8px;
+		margin-bottom: 1rem;
+		font-size: 0.88rem;
+		line-height: 1.5;
+		color: var(--text);
 	}
 	.share-buttons {
 		display: flex;

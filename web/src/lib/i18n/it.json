@@ -363,7 +363,7 @@
       "profile": "Raccogli finche non scatta.",
       "strength": "Pazienza, visione di lungo periodo",
       "risk": "Dall'esterno sembra inazione; rischio di non arrivare mai alla soglia",
-      "llm": "",
+      "llm": "Fornisci al LLM informazioni a pezzi e chiedigli di segnalarti quando emerge una struttura dal materiale accumulato.",
       "example": "Leggi articoli su un nuovo mercato da settimane senza formarti un'opinione. Poi una mattina sotto la doccia, tutti quei frammenti si incastrano in un quadro coerente — l'intuizione stava maturando da tempo."
     },
     "2_7": {
@@ -371,7 +371,7 @@
       "profile": "Procedi scartando il falso.",
       "strength": "Efficienza, riduzione del rumore",
       "risk": "Puo scartare troppo presto opzioni valide",
-      "llm": "",
+      "llm": "Chiedi al LLM di elencare tutte le spiegazioni possibili, poi eliminale una per una con ragionamento.",
       "example": "La tua app si blocca e ci sono cinque possibili cause. Invece di investigarle una per una, le escludi: 'Non e il database — funziona. Non e l'API — risponde. Non e l'autenticazione...' finche non resta un solo sospettato."
     },
     "2_8": {
@@ -387,7 +387,7 @@
       "profile": "Argomenti contro te stesso.",
       "strength": "Auto-critica, riduzione del bias",
       "risk": "Paralisi: l'avvocato del diavolo interno non tace mai",
-      "llm": "",
+      "llm": "Chiedi al LLM di costruire l'argomento piu forte per e contro: \"Dammi la miglior argomentazione a favore e contro questa posizione.\"",
       "example": "Ti sei appena convinto che il lavoro da remoto e il futuro. Ma poi una voce interna dice: 'Aspetta — e la collaborazione spontanea? E i junior che hanno bisogno di mentoring?' Non riesci a smettere di discutere con te stesso."
     },
     "2_10": {
@@ -395,7 +395,7 @@
       "profile": "Generi molte idee senza giudizio.",
       "strength": "Creativita, esplorazione",
       "risk": "Difficolta a convergere: troppe opzioni, nessuna scelta",
-      "llm": "",
+      "llm": "\"Dammi 10 approcci diversi a questo problema, anche non convenzionali.\"",
       "example": "In un brainstorming, mentre tutti sono ancora sull'idea numero 2, tu ne hai gia buttate fuori dieci — alcune folli, altre pratiche. Non le giudichi ancora: prima viene la quantita, poi il filtro."
     },
     "2_11": {
@@ -403,7 +403,7 @@
       "profile": "Riformuli in un altro framework.",
       "strength": "Interdisciplinarita, comunicazione cross-team",
       "risk": "Rischio di forzare il framework sbagliato",
-      "llm": "",
+      "llm": "Chiedi al LLM di riformulare il problema in un dominio o linguaggio che conosci meglio.",
       "example": "Sei un marketer e devi capire un problema di supply chain. Lo traduci in termini di marketing: 'Quindi la fabbrica e come una pipeline di contenuti, e il collo di bottiglia e come la coda di approvazione delle campagne?' Improvvisamente ha senso."
     },
     "2_12": {
@@ -419,7 +419,7 @@
       "profile": "Testi scenari \"what if\" mentalmente.",
       "strength": "Pianificazione, anticipazione di rischi",
       "risk": "Rischio di paralisi da scenario negativo",
-      "llm": "",
+      "llm": "\"Immagina che questo progetto sia gia fallito — quali sono state le cause piu probabili?\" (Tecnica del pre-mortem.)",
       "example": "Prima di lanciare un nuovo prodotto, chiudi gli occhi e immagini che siano passati sei mesi ed e stato un flop. 'Cosa e andato storto?' ti chiedi — e improvvisamente i rischi che prima erano invisibili diventano evidenti."
     },
     "2_14": {
@@ -427,7 +427,7 @@
       "profile": "Riconosci ricorrenze e regolarita.",
       "strength": "Velocita, esperienza applicata",
       "risk": "Falsi positivi: vedere pattern che non ci sono",
-      "llm": "",
+      "llm": "\"Hai visto pattern simili in altri contesti? Cosa succede di solito dopo?\"",
       "example": "Un nuovo assunto commette un errore, e tu pensi subito: 'Gia visto — ogni volta che saltiamo la checklist di onboarding, succede la stessa cosa alla terza settimana.' Riconosci lo schema prima che gli altri se ne accorgano."
     },
     "2_15": {
@@ -435,7 +435,7 @@
       "profile": "Pensi meglio sotto sfida.",
       "strength": "Motivazione, performance sotto pressione",
       "risk": "Dipendenza dall'avversario; non tutto e una gara",
-      "llm": "",
+      "llm": "Presenta il problema come una sfida: \"Qual e la soluzione piu elegante che riesci a trovare?\" Usa il LLM come sparring partner.",
       "example": "Scrivi codice migliore quando c'e una deadline, prepari presentazioni migliori quando sai che il pubblico sara tosto, e in segreto ti piace quando qualcuno dice 'scommetto che non ce la fai in una settimana.'"
     },
     "2_16": {
@@ -443,7 +443,7 @@
       "profile": "Pensi al tuo modo di pensare.",
       "strength": "Adattabilita, scelta della strategia giusta",
       "risk": "Rischio di meta-loop: pensare al pensare senza pensare",
-      "llm": "",
+      "llm": "\"Prima di rispondere, dimmi quale approccio useresti per questo problema e perche.\"",
       "example": "A meta della risoluzione di un problema, ti fermi e pensi: 'Aspetta, ma sto usando l'approccio giusto? Forse dovrei fare brainstorming invece di analizzare.' Ti trovi costantemente a fare un passo indietro per valutare il tuo stesso processo di pensiero."
     },
     "2_17": {
@@ -451,7 +451,7 @@
       "profile": "Assumi altri punti di vista.",
       "strength": "Empatia, comprensione di stakeholder",
       "risk": "Rischio di perdere la propria posizione",
-      "llm": "",
+      "llm": "\"Analizza questo dal punto di vista di [stakeholder X]. Cosa darebbe la priorita?\"",
       "example": "Durante una discussione su un prodotto, dici naturalmente: 'Ma il team di assistenza clienti come la vede? E l'utente finale che non e tecnico?' Ruoti istintivamente tra i diversi punti di vista."
     },
     "3_1": {
@@ -483,7 +483,7 @@
       "profile": "Sali di livello: dal caso al principio.",
       "strength": "Generalizzazione, teoria",
       "risk": "Perdita del concreto",
-      "llm": "",
+      "llm": "\"Qual e il principio generale che sta dietro a questo caso specifico?\"",
       "example": "Quando un collega si lamenta del capo, non pensi alla persona specifica — pensi subito 'questo e un problema di leadership, non di persone' e fai zoom out sul principio generale."
     },
     "3_5": {
@@ -491,7 +491,7 @@
       "profile": "Scendi di livello: dal principio al caso.",
       "strength": "Praticita, implementazione",
       "risk": "Difficolta a generalizzare",
-      "llm": "",
+      "llm": "\"Dammi un esempio concreto di come funziona questo principio nella pratica.\"",
       "example": "Qualcuno ti spiega la 'metodologia agile' in termini astratti e tu chiedi subito: 'OK ma fammi vedere — come funziona uno sprint il lunedi mattina? Cosa fa concretamente il team?' Hai bisogno del caso concreto per capire."
     },
     "3_6": {
@@ -515,7 +515,7 @@
       "profile": "Ricontestualizzi nel tempo.",
       "strength": "Visione strategica, prospettiva",
       "risk": "Rischio di rimandare l'azione al \"lungo termine\"",
-      "llm": "",
+      "llm": "\"Come apparira tra 5 anni? E se lo avessimo fatto 10 anni fa?\"",
       "example": "Quando qualcuno propone di adottare una nuova tecnologia, il tuo primo pensiero non e 'funziona adesso?' ma 'dove sara tra cinque anni? E cosa sarebbe successo se l'avessimo adottata tre anni fa?'"
     },
     "4_1": {
@@ -523,7 +523,7 @@
       "profile": "Parli per pensare e comunicare.",
       "strength": "Velocita, interattivita",
       "risk": "Volatilita: il parlato non resta",
-      "llm": "",
+      "llm": "Usa strumenti di dettatura per dettare i tuoi prompt naturalmente, poi perfeziona il testo.",
       "example": "Quando sei bloccato su un problema, cerchi un collega e dici 'fammi ragionare ad alta voce un attimo.' Parlare e il tuo modo di elaborare — le idee confuse nella testa diventano chiare nel momento in cui le pronunci."
     },
     "4_2": {
@@ -531,7 +531,7 @@
       "profile": "Scrivi per pensare e comunicare.",
       "strength": "Permanenza, revisione, distribuzione",
       "risk": "Lentezza; rischio di over-editing",
-      "llm": "",
+      "llm": "Sei naturalmente portato per interagire con un LLM. Scrivi prompt strutturati e itera sul testo.",
       "example": "Tieni un diario personale, scrivi email lunghe e prendi appunti dettagliati in riunione. Scrivere non e una fatica per te — e il tuo modo di pensare. Mettere le parole su carta rende le tue idee reali."
     },
     "4_3": {
@@ -539,7 +539,7 @@
       "profile": "Disegni per pensare e comunicare.",
       "strength": "Visione d'insieme, relazioni",
       "risk": "Non tutti capiscono i diagrammi; linearizzazione necessaria",
-      "llm": "",
+      "llm": "Descrivi i tuoi diagrammi a parole: \"Immagina un flowchart dove...\" Usa metafore spaziali per trasmettere la struttura.",
       "example": "In qualsiasi riunione, sei quello che si alza e va alla lavagna a disegnare caselle e frecce. Non riesci a spiegare un processo senza schematizzarlo — il diagramma E la tua spiegazione."
     },
     "4_4": {
@@ -547,7 +547,7 @@
       "profile": "Costruisci per pensare e comunicare.",
       "strength": "Tangibilita, test rapido",
       "risk": "Non scalabile per comunicazione remota",
-      "llm": "",
+      "llm": "Chiedi al LLM di generare codice o mockup su cui puoi costruire immediatamente. Usalo per prototipazione rapida.",
       "example": "Invece di descrivere la tua idea di app in un documento, costruisci un prototipo rapido con cartone e post-it — o salti direttamente nel codice. Capisci costruendo, non scrivendo."
     },
     "4_5": {
@@ -555,7 +555,7 @@
       "profile": "Formalizzi per pensare e comunicare.",
       "strength": "Precisione, eseguibilita",
       "risk": "Barriera di accesso per interlocutori non tecnici",
-      "llm": "",
+      "llm": "Puoi usare linguaggio formale, pseudocodice o notazione logica direttamente. I LLM lo capiscono bene.",
       "example": "Quando qualcuno ti spiega un problema di business, lo traduci subito in pseudocodice o formula: 'Quindi ricavo = utenti x conversione x prezzo, e il problema e nella variabile conversione.' Formalizzare e il tuo linguaggio naturale."
     },
     "5_1": {
