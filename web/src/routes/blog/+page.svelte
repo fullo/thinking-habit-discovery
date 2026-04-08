@@ -3,12 +3,19 @@
 	import { base } from '$app/paths';
 	import { dimensionColors } from '$lib/data/profiles.js';
 
+	let articles = [];
+	let articlesByDimension = {};
 	let papers = [];
-	let papersByDimension = {};
+	let papersById = {};
 
-	import('$lib/data/papers.js').then((mod) => {
-		papers = mod.papers;
-		papersByDimension = mod.papersByDimension;
+	Promise.all([
+		import('$lib/data/articles.js'),
+		import('$lib/data/papers.js')
+	]).then(([artMod, papMod]) => {
+		articles = artMod.articles;
+		articlesByDimension = artMod.articlesByDimension;
+		papers = papMod.papers;
+		papersById = Object.fromEntries(papMod.papers.map((p) => [p.id, p]));
 	});
 
 	const sections = [
@@ -19,61 +26,109 @@
 		{ id: 'D5', title: 'Logical Form', subtitle: 'The structure of your reasoning' },
 		{ id: 'CF', title: 'Facilitating Conditions', subtitle: 'What influences thinking without being thinking' }
 	];
+
+	function getPaper(id) {
+		return papersById[id] || null;
+	}
 </script>
 
 <svelte:head>
 	<title>Research Blog — {$t('app.title')}</title>
 </svelte:head>
 
-<article class="blog-page">
+<div class="blog-page">
 	<h1>The Science Behind Your Thinking Profile</h1>
 	<p class="intro">
 		This model is built on decades of research in neuroscience, cognitive psychology,
-		and philosophy of mind. Below, we summarize the key papers that inform each
-		dimension of the model, explaining what they found and why it matters for
-		understanding how you think.
+		and philosophy of mind. Each article below explains the theory, what the research
+		found, and how we integrated it into the questionnaire.
 	</p>
 
 	<nav class="toc" aria-label="Table of contents">
-		<h2>Dimensions</h2>
+		<h2>Topics</h2>
 		{#each sections as sec}
-			<a href="#{sec.id}" class="toc-link" style="border-left-color: {dimensionColors[sec.id] || '#6b7280'}">
-				<strong>{sec.title}</strong>
-				<span>{sec.subtitle}</span>
-			</a>
+			{@const dimArticles = articlesByDimension[sec.id] || []}
+			{#if dimArticles.length > 0}
+				<div class="toc-group">
+					<strong class="toc-dim" style="color: {dimensionColors[sec.id] || '#6b7280'}">{sec.title}</strong>
+					{#each dimArticles as article}
+						<a href="#{article.id}" class="toc-link">{article.title}</a>
+					{/each}
+				</div>
+			{/if}
 		{/each}
 	</nav>
 
 	{#each sections as sec}
-		{@const dimPapers = papersByDimension[sec.id] || []}
-		<section id={sec.id} class="dimension-section">
-			<h2 style="color: {dimensionColors[sec.id] || '#6b7280'}">{sec.title}</h2>
-			<p class="section-subtitle">{sec.subtitle}</p>
+		{@const dimArticles = articlesByDimension[sec.id] || []}
+		{#if dimArticles.length > 0}
+			<section class="dimension-section">
+				<h2 class="dim-title" style="color: {dimensionColors[sec.id] || '#6b7280'}">{sec.title}</h2>
+				<p class="dim-subtitle">{sec.subtitle}</p>
 
-			{#if dimPapers.length === 0}
-				<p class="loading">Loading papers...</p>
-			{:else}
-				{#each dimPapers as paper}
-					<article class="paper-card" id={paper.id}>
-						<h3>{paper.title}</h3>
-						<p class="meta">
-							{paper.authors} ({paper.year})
-							{#if paper.doi}
-								&middot; <a href="https://doi.org/{paper.doi}" target="_blank" rel="noopener noreferrer">DOI</a>
+				{#each dimArticles as article}
+					<article class="article-card" id={article.id}>
+						<h3>{article.title}</h3>
+
+						<div class="article-body">
+							<div class="section-block">
+								<h4>The Theory</h4>
+								<p>{article.theory}</p>
+							</div>
+
+							<div class="section-block">
+								<h4>What the Research Found</h4>
+								<p>{article.findings}</p>
+							</div>
+
+							<div class="section-block integration">
+								<h4>How We Use It</h4>
+								<p>{article.integration}</p>
+							</div>
+
+							{#if article.connectedArticles && article.connectedArticles.length > 0}
+								<div class="connected">
+									<h4>Related Articles</h4>
+									<div class="connected-links">
+										{#each article.connectedArticles as connId}
+											{@const conn = articles.find((a) => a.id === connId)}
+											{#if conn}
+												<a href="#{conn.id}" class="connected-link">{conn.title}</a>
+											{/if}
+										{/each}
+									</div>
+								</div>
 							{/if}
-						</p>
-						<p class="relevance">{paper.relevance}</p>
+
+							<details class="papers-detail">
+								<summary>References ({article.paperIds.length} paper{article.paperIds.length > 1 ? 's' : ''})</summary>
+								<ul class="paper-list">
+									{#each article.paperIds as pid}
+										{@const paper = getPaper(pid)}
+										{#if paper}
+											<li>
+												<strong>{paper.authors}</strong> ({paper.year}).
+												<em>{paper.title}</em>.
+												{#if paper.doi}
+													<a href="https://doi.org/{paper.doi}" target="_blank" rel="noopener noreferrer">DOI</a>
+												{/if}
+											</li>
+										{/if}
+									{/each}
+								</ul>
+							</details>
+						</div>
 					</article>
 				{/each}
-			{/if}
-		</section>
+			</section>
+		{/if}
 	{/each}
 
 	<div class="cta-row">
 		<a href="{base}/quiz" class="cta">Take the questionnaire</a>
 		<a href="{base}/about" class="cta-secondary">About the project</a>
 	</div>
-</article>
+</div>
 
 <style>
 	.blog-page {
@@ -90,6 +145,8 @@
 		margin-bottom: 2rem;
 		line-height: 1.6;
 	}
+
+	/* TOC */
 	.toc {
 		margin-bottom: 2.5rem;
 		padding: 1.25rem;
@@ -104,68 +161,141 @@
 		color: var(--text-secondary);
 		margin-bottom: 0.75rem;
 	}
+	.toc-group {
+		margin-bottom: 0.75rem;
+	}
+	.toc-dim {
+		display: block;
+		font-size: 0.85rem;
+		margin-bottom: 0.25rem;
+	}
 	.toc-link {
 		display: block;
-		padding: 0.4rem 0.75rem;
-		margin-bottom: 0.25rem;
-		border-left: 3px solid;
+		padding: 0.2rem 0 0.2rem 1rem;
+		font-size: 0.85rem;
+		color: var(--text);
 		text-decoration: none;
-		border-radius: 0 4px 4px 0;
-		transition: background 0.15s;
+		border-left: 2px solid var(--border);
+		transition: border-color 0.15s;
 	}
 	.toc-link:hover {
-		background: var(--bg);
+		border-left-color: var(--accent);
+		color: var(--accent);
 	}
-	.toc-link strong {
-		display: block;
-		font-size: 0.9rem;
-		color: var(--text);
-	}
-	.toc-link span {
-		font-size: 0.8rem;
-		color: var(--text-secondary);
-	}
+
+	/* Sections */
 	.dimension-section {
-		margin: 2.5rem 0;
-		padding-top: 1rem;
+		margin: 3rem 0;
+		padding-top: 1.5rem;
 		border-top: 2px solid var(--border);
 	}
-	.dimension-section h2 {
+	.dim-title {
 		font-size: 1.4rem;
 		margin-bottom: 0.25rem;
 	}
-	.section-subtitle {
+	.dim-subtitle {
 		color: var(--text-secondary);
 		font-size: 0.9rem;
-		margin-bottom: 1.25rem;
+		margin-bottom: 1.5rem;
 	}
-	.paper-card {
-		padding: 1rem 0;
+
+	/* Article cards */
+	.article-card {
+		margin-bottom: 2.5rem;
+		padding: 1.5rem;
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		background: var(--bg);
+	}
+	.article-card h3 {
+		font-size: 1.15rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		color: var(--text);
+	}
+	.section-block {
+		margin-bottom: 1rem;
+	}
+	.section-block h4 {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--accent);
+		margin-bottom: 0.35rem;
+		font-weight: 700;
+	}
+	.section-block p {
+		font-size: 0.93rem;
+		line-height: 1.6;
+		color: var(--text);
+	}
+	.integration {
+		padding: 0.75rem 1rem;
+		background: var(--accent-bg);
+		border-radius: 8px;
+		border-left: 3px solid var(--accent);
+	}
+
+	/* Connected articles */
+	.connected {
+		margin-top: 0.75rem;
+	}
+	.connected h4 {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--text-secondary);
+		margin-bottom: 0.35rem;
+	}
+	.connected-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+	.connected-link {
+		font-size: 0.8rem;
+		padding: 0.2rem 0.6rem;
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		text-decoration: none;
+		color: var(--text);
+		transition: background 0.15s, border-color 0.15s;
+	}
+	.connected-link:hover {
+		background: var(--bg-hover);
+		border-color: var(--accent);
+	}
+
+	/* Papers detail */
+	.papers-detail {
+		margin-top: 1rem;
+		font-size: 0.85rem;
+	}
+	.papers-detail summary {
+		cursor: pointer;
+		color: var(--text-secondary);
+		font-weight: 600;
+		padding: 0.5rem 0;
+	}
+	.papers-detail summary:hover {
+		color: var(--text);
+	}
+	.paper-list {
+		list-style: none;
+		padding: 0;
+		margin-top: 0.5rem;
+	}
+	.paper-list li {
+		padding: 0.4rem 0;
 		border-bottom: 1px solid var(--border);
+		line-height: 1.5;
 	}
-	.paper-card h3 {
-		font-size: 1rem;
+	.paper-list a {
 		font-weight: 600;
-		margin-bottom: 0.3rem;
-		color: var(--text);
+		font-size: 0.8rem;
 	}
-	.meta {
-		font-size: 0.82rem;
-		color: var(--text-secondary);
-		margin-bottom: 0.5rem;
-	}
-	.meta a {
-		font-weight: 600;
-	}
-	.relevance {
-		font-size: 0.92rem;
-		line-height: 1.55;
-		color: var(--text);
-	}
-	.loading {
-		color: var(--text-secondary);
-		font-style: italic;
-	}
+
+	/* CTAs */
 	.cta-row {
 		display: flex;
 		gap: 1rem;
