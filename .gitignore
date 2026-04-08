@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+web/build/
+web/.svelte-kit/
+web/node_modules/
+.claude/plans/
+*.log
