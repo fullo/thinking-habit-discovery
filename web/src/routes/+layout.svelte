@@ -1,7 +1,14 @@
 <script>
+	import { onMount } from 'svelte';
 	import { t, locale } from '$lib/stores/locale.js';
+	import { theme } from '$lib/stores/theme.js';
 	import { base } from '$app/paths';
 	import LanguageSwitch from '$lib/components/LanguageSwitch.svelte';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+
+	onMount(() => {
+		theme.init();
+	});
 
 	$: if (typeof document !== 'undefined') {
 		document.documentElement.lang = $locale;
@@ -12,17 +19,26 @@
 	<title>{$t('app.title')}</title>
 </svelte:head>
 
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 <header class="site-header">
 	<a href="{base}/" class="logo">{$t('app.title')}</a>
-	<LanguageSwitch />
+	<nav class="header-nav" aria-label="Main">
+		<a href="{base}/about" class="nav-link">About</a>
+		<a href="{base}/blog" class="nav-link">Blog</a>
+	</nav>
+	<div class="header-controls">
+		<ThemeToggle />
+		<LanguageSwitch />
+	</div>
 </header>
 
-<main>
+<main id="main-content">
 	<slot />
 </main>
 
 <footer class="site-footer">
-	<p>Based on cognitive science research. Open source.</p>
+	<p>Based on cognitive science research. <a href="https://github.com/fullo/thinking-habit-discovery" class="footer-link">Open source</a>.</p>
 </footer>
 
 <style>
@@ -44,8 +60,9 @@
 		--font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 		color-scheme: light dark;
 	}
+	/* System preference dark mode */
 	@media (prefers-color-scheme: dark) {
-		:global(:root) {
+		:global(:root:not([data-theme="light"])) {
 			--text: #e5e7eb;
 			--text-secondary: #9ca3af;
 			--bg: #111827;
@@ -57,12 +74,48 @@
 			--warning: #fbbf24;
 		}
 	}
+	/* Explicit dark mode toggle */
+	:global([data-theme="dark"]) {
+		--text: #e5e7eb;
+		--text-secondary: #9ca3af;
+		--bg: #111827;
+		--bg-hover: #1f2937;
+		--border: #374151;
+		--accent: #818cf8;
+		--accent-light: #6366f1;
+		--accent-bg: #1e1b4b;
+		--warning: #fbbf24;
+	}
 	:global(body) {
 		font-family: var(--font);
 		color: var(--text);
 		background: var(--bg);
 		line-height: 1.6;
 		-webkit-font-smoothing: antialiased;
+	}
+	/* Accessibility: focus visible */
+	:global(:focus-visible) {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+	}
+	:global(a) {
+		color: var(--accent);
+	}
+	.skip-link {
+		position: absolute;
+		top: -100%;
+		left: 1rem;
+		padding: 0.5rem 1rem;
+		background: var(--accent);
+		color: white;
+		border-radius: 0 0 6px 6px;
+		font-weight: 600;
+		font-size: 0.9rem;
+		text-decoration: none;
+		z-index: 100;
+	}
+	.skip-link:focus {
+		top: 0;
 	}
 	.site-header {
 		display: flex;
@@ -72,12 +125,33 @@
 		border-bottom: 1px solid var(--border);
 		max-width: 800px;
 		margin: 0 auto;
+		gap: 1rem;
+		flex-wrap: wrap;
 	}
 	.logo {
 		font-weight: 800;
 		font-size: 1.1rem;
 		color: var(--accent);
 		text-decoration: none;
+	}
+	.header-nav {
+		display: flex;
+		gap: 1rem;
+	}
+	.nav-link {
+		font-size: 0.9rem;
+		font-weight: 500;
+		color: var(--text-secondary);
+		text-decoration: none;
+		transition: color 0.15s;
+	}
+	.nav-link:hover {
+		color: var(--text);
+	}
+	.header-controls {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 	main {
 		max-width: 720px;
@@ -91,5 +165,8 @@
 		font-size: 0.8rem;
 		color: var(--text-secondary);
 		border-top: 1px solid var(--border);
+	}
+	.footer-link {
+		color: var(--text-secondary);
 	}
 </style>

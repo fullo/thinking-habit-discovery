@@ -561,5 +561,19 @@
     "gapIntro": "The gap between your cognitive channel and your externalization medium shows where you lose information when communicating.",
     "llmIntro": "Based on your profile, here's how to structure your prompts to get the most out of an LLM.",
     "strategy": "Compensatory strategy"
+  },
+  "share": {
+    "title": "Share your profile",
+    "text": "I just discovered my thinking profile!",
+    "cta": "Discover yours:",
+    "copy": "Copy"
+  },
+  "about": {
+    "title": "About",
+    "intro": "This project started with a question: how do we actually think? Not how well we think, but what shape our thinking takes.",
+    "model": "The 5-Dimension Model",
+    "modelDesc": "We identified 5 independent dimensions that describe a person's thinking profile:",
+    "papers": "Scientific References",
+    "papersDesc": "The model is grounded in peer-reviewed research from neuroscience, cognitive psychology, and philosophy of mind."
   }
 }

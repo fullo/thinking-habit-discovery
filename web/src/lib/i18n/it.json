@@ -631,5 +631,19 @@
       "D4": "Medium",
       "D5": "Forma logica"
     }
+  },
+  "share": {
+    "title": "Condividi il tuo profilo",
+    "text": "Ho scoperto il mio profilo di pensiero!",
+    "cta": "Scopri il tuo:",
+    "copy": "Copia"
+  },
+  "about": {
+    "title": "About",
+    "intro": "Questo progetto nasce da una domanda: come pensiamo, davvero? Non quanto siamo bravi a pensare, ma quale forma prende il nostro pensiero.",
+    "model": "Il modello a 5 dimensioni",
+    "modelDesc": "Abbiamo identificato 5 dimensioni indipendenti che descrivono il profilo di pensiero di una persona:",
+    "papers": "Paper e riferimenti scientifici",
+    "papersDesc": "Il modello si basa su ricerca peer-reviewed in neuroscienze, psicologia cognitiva e filosofia della mente."
   }
 }

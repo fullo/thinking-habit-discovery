@@ -2,12 +2,24 @@
 	import { t } from '$lib/stores/locale.js';
 	import { base } from '$app/paths';
 	import { quiz, profile } from '$lib/stores/quiz.js';
+	import { valueMetadata } from '$lib/data/profiles.js';
 	import RadarChart from '$lib/components/RadarChart.svelte';
 	import ProfileCard from '$lib/components/ProfileCard.svelte';
 	import GapAnalysis from '$lib/components/GapAnalysis.svelte';
 	import LlmStrategies from '$lib/components/LlmStrategies.svelte';
+	import SocialShare from '$lib/components/SocialShare.svelte';
 
 	$: p = $profile;
+
+	$: profileSummary = ['D1', 'D2', 'D3', 'D4', 'D5']
+		.map((dim) => {
+			const top = p[dim]?.[0];
+			if (!top) return null;
+			const meta = valueMetadata[top.value];
+			return meta ? `${$t(`dims.${dim}.name`)}: ${$t(meta.nameKey)}` : null;
+		})
+		.filter(Boolean)
+		.join(' | ');
 
 	function retake() {
 		quiz.reset();
@@ -30,6 +42,8 @@
 	<GapAnalysis gaps={p.gap} />
 
 	<LlmStrategies profile={p} />
+
+	<SocialShare {profileSummary} />
 
 	<div class="actions">
 		<a href="{base}/quiz" class="btn btn-secondary" on:click={retake}>

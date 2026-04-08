@@ -32,7 +32,7 @@
 	}
 </script>
 
-<div class="quiz-page">
+<div class="quiz-page" aria-live="polite">
 	<ProgressBar currentSection={currentSection} />
 
 	<h2 class="section-title">
