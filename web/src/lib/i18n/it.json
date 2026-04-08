@@ -28,7 +28,10 @@
     "prev": "Indietro",
     "results": "Vedi risultati",
     "selectUpTo2": "Seleziona fino a 2 risposte",
-    "progress": "Domanda {current} di {total}"
+    "progress": "Domanda {current} di {total}",
+    "pageTitle": "Questionario",
+    "deepeningTitle": "Approfondimento",
+    "deepeningSubtitle": "In base alle tue risposte, abbiamo qualche domanda in più"
   },
   "questions": {
     "A1": {
@@ -280,273 +283,312 @@
       "profile": "Pensi in parole e frasi. Il tuo dialogo interno e ricco e articolato.",
       "strength": "Argomentazione, persuasione, scrittura",
       "risk": "Sovra-verbalizzazione: le parole possono mascherare lacune nel ragionamento",
-      "llm": "Scrivi i prompt come parleresti. Puoi essere discorsivo — i LLM gestiscono bene il linguaggio naturale."
+      "llm": "Scrivi i prompt come parleresti. Puoi essere discorsivo — i LLM gestiscono bene il linguaggio naturale.",
+      "example": "Sei quella persona che, di fronte a una decisione difficile, ha un vero dibattito nella propria testa — pesi pro e contro in frasi complete, quasi parlando con te stesso in silenzio."
     },
     "1_2": {
       "name": "Visuo-spaziale",
       "profile": "Pensi in immagini, mappe, relazioni spaziali.",
       "strength": "Visione d'insieme, connessioni tra concetti, design",
       "risk": "Difficolta a linearizzare: tradurre una mappa in un discorso sequenziale",
-      "llm": "Descrivi la struttura che hai in mente: \"Immagina una tabella con...\", \"Pensa a un albero dove il nodo radice e...\". Usa relazioni spaziali."
+      "llm": "Descrivi la struttura che hai in mente: \"Immagina una tabella con...\", \"Pensa a un albero dove il nodo radice e...\". Usa relazioni spaziali.",
+      "example": "Quando qualcuno ti spiega l'organigramma di un'azienda, non senti nomi e titoli — nella tua testa vedi subito caselle e frecce, una mappa di chi si collega a chi."
     },
     "1_3": {
       "name": "Somatico",
       "profile": "Pensi col corpo: sensazioni, intuizioni fisiche, \"gut feeling.\"",
       "strength": "Velocita decisionale, lettura delle situazioni, empatia",
       "risk": "Difficolta a giustificare: \"lo sento\" non convince in un meeting",
-      "llm": "Esplicita le tue intuizioni: \"Ho la sensazione che X sia la direzione giusta — aiutami a verificare se ci sono ragioni oggettive.\" Chiedi al LLM di fare il lavoro di traduzione intuitivo-razionale."
+      "llm": "Esplicita le tue intuizioni: \"Ho la sensazione che X sia la direzione giusta — aiutami a verificare se ci sono ragioni oggettive.\" Chiedi al LLM di fare il lavoro di traduzione intuitivo-razionale.",
+      "example": "Entri in una stanza dove due colleghi hanno appena litigato, e prima che qualcuno apra bocca, lo senti nel petto — una pesantezza che ti dice che qualcosa non va."
     },
     "1_4": {
       "name": "Sonoro/ritmico",
       "profile": "Pensi in pattern ritmici, armonie, flussi temporali.",
       "strength": "Sensibilita al timing, alla struttura narrativa, all'equilibrio",
       "risk": "Raro: pochi ambienti di lavoro lo valorizzano esplicitamente",
-      "llm": "Usa il ritmo nella struttura: elenchi, parallelismi, alternanze. Chiedi risposte con struttura ritmica."
+      "llm": "Usa il ritmo nella struttura: elenchi, parallelismi, alternanze. Chiedi risposte con struttura ritmica.",
+      "example": "Quando leggi una proposta ben scritta, noti il ritmo prima del contenuto — se un paragrafo spezza la cadenza o una sezione e troppo lunga, lo percepisci come una nota stonata."
     },
     "1_5": {
       "name": "Astratto-proposizionale",
       "profile": "Pensi in concetti puri, senza supporto sensoriale.",
       "strength": "Ragionamento formale, logica, astrazione",
       "risk": "Distacco dal concreto: rischio di costruire castelli in aria",
-      "llm": "Puoi usare linguaggio formale, pseudo-codice, notazione logica. I LLM lo capiscono bene."
+      "llm": "Puoi usare linguaggio formale, pseudo-codice, notazione logica. I LLM lo capiscono bene.",
+      "example": "Quando ti chiedono come hai risolto un problema, fai fatica a spiegarlo — non c'erano immagini ne parole, solo la certezza che se A implica B e B implica C, allora A implica C. Logica pura, senza supporto visivo."
     },
     "2_1": {
       "name": "Adversariale",
       "profile": "Fai avanzare il pensiero attaccandolo.",
       "strength": "Robustezza delle soluzioni, stress-testing",
       "risk": "Percezione di conflittualita da parte degli altri",
-      "llm": "Chiedi al LLM di fare l'avvocato del diavolo: \"Trova i 3 punti deboli di questa idea.\" Oppure: \"Argomenta contro questa posizione il piu forte possibile.\""
+      "llm": "Chiedi al LLM di fare l'avvocato del diavolo: \"Trova i 3 punti deboli di questa idea.\" Oppure: \"Argomenta contro questa posizione il piu forte possibile.\"",
+      "example": "Sei quello in riunione che dice 'facciamo l'avvocato del diavolo' — non perche sei contrario, ma perche sai che attaccare un'idea e il modo piu veloce per trovarne i punti deboli."
     },
     "2_2": {
       "name": "Socratico",
       "profile": "Fai avanzare il pensiero con domande.",
       "strength": "Profondita, scoperta di assunzioni nascoste",
       "risk": "Lentezza; puo sembrare evasivo (\"rispondi invece di chiedere!\")",
-      "llm": "Chiedi al LLM di farti domande invece di darti risposte: \"Non darmi la soluzione — fammi le domande giuste per trovarla.\""
+      "llm": "Chiedi al LLM di farti domande invece di darti risposte: \"Non darmi la soluzione — fammi le domande giuste per trovarla.\"",
+      "example": "Quando un amico dice 'voglio lasciare il lavoro,' invece di dare consigli chiedi: 'Cosa esattamente ti rende infelice? E il lavoro in se, le persone, o la crescita?' Scavi con domande finche il vero problema emerge."
     },
     "2_3": {
       "name": "Iterativo",
       "profile": "Fai avanzare il pensiero per cicli: versione grezza, migliora, ripeti.",
       "strength": "Pragmatismo, capacita di partire con poco",
       "risk": "Rischio di overengineering: iterare senza fine",
-      "llm": "Lavora in piu turni: \"Dammi una prima bozza, poi la miglioriamo.\" Non cercare la risposta perfetta al primo prompt."
+      "llm": "Lavora in piu turni: \"Dammi una prima bozza, poi la miglioriamo.\" Non cercare la risposta perfetta al primo prompt.",
+      "example": "Non scrivi mai l'email perfetta al primo tentativo — butti giu una bozza, te la rileggi, riscrivi l'apertura, aggiusti il tono, e alla terza passata finalmente funziona."
     },
     "2_4": {
       "name": "Insegnamento",
       "profile": "Capisci spiegando.",
       "strength": "Chiarezza espositiva, sintesi",
       "risk": "Dipendenza da un interlocutore (reale o immaginato)",
-      "llm": "Chiedi al LLM di spiegarti come se fossi un principiante, poi prova a ri-spiegare tu. Oppure: \"Fammi le domande di uno studente su questo argomento.\""
+      "llm": "Chiedi al LLM di spiegarti come se fossi un principiante, poi prova a ri-spiegare tu. Oppure: \"Fammi le domande di uno studente su questo argomento.\"",
+      "example": "Capisci davvero qualcosa solo quando riesci a spiegarlo a qualcun altro. Dopo aver letto un concetto nuovo, il primo istinto e raccontarlo a un collega — e nel raccontarlo, finalmente ti e chiaro."
     },
     "2_5": {
       "name": "Decostruttivo",
       "profile": "Capisci smontando.",
       "strength": "Analisi, debugging, comprensione di sistemi",
       "risk": "Puo diventare distruttivo senza ricostruzione",
-      "llm": "\"Scomponi questo in tutte le sue componenti.\" \"Cosa succede se tolgo X?\""
+      "llm": "\"Scomponi questo in tutte le sue componenti.\" \"Cosa succede se tolgo X?\"",
+      "example": "Quando il wifi smette di funzionare, non chiami l'assistenza — stacchi il router, testi il cavo, controlli i DNS, provi un altro dispositivo. Smonti tutto pezzo per pezzo finche non trovi cosa si e rotto."
     },
     "2_6": {
       "name": "Accumulo e soglia",
       "profile": "Raccogli finche non scatta.",
       "strength": "Pazienza, visione di lungo periodo",
       "risk": "Dall'esterno sembra inazione; rischio di non arrivare mai alla soglia",
-      "llm": ""
+      "llm": "",
+      "example": "Leggi articoli su un nuovo mercato da settimane senza formarti un'opinione. Poi una mattina sotto la doccia, tutti quei frammenti si incastrano in un quadro coerente — l'intuizione stava maturando da tempo."
     },
     "2_7": {
       "name": "Eliminazione",
       "profile": "Procedi scartando il falso.",
       "strength": "Efficienza, riduzione del rumore",
       "risk": "Puo scartare troppo presto opzioni valide",
-      "llm": ""
+      "llm": "",
+      "example": "La tua app si blocca e ci sono cinque possibili cause. Invece di investigarle una per una, le escludi: 'Non e il database — funziona. Non e l'API — risponde. Non e l'autenticazione...' finche non resta un solo sospettato."
     },
     "2_8": {
       "name": "Analogia",
       "profile": "Capisci trovando somiglianze.",
       "strength": "Creativita, transfer tra domini",
       "risk": "Analogie sbagliate: somiglianza superficiale spacciata per strutturale",
-      "llm": "\"A cosa somiglia questo problema in un altro contesto?\" \"Trovami un'analogia per...\""
+      "llm": "\"A cosa somiglia questo problema in un altro contesto?\" \"Trovami un'analogia per...\"",
+      "example": "Il team fatica con l'onboarding dei nuovi assunti, e tu dici: 'E come imparare una lingua nuova — serve l'immersione, non i libri di grammatica.' Quel collegamento tra ambiti diversi riformula subito il problema."
     },
     "2_9": {
       "name": "Contraddizione interna",
       "profile": "Argomenti contro te stesso.",
       "strength": "Auto-critica, riduzione del bias",
       "risk": "Paralisi: l'avvocato del diavolo interno non tace mai",
-      "llm": ""
+      "llm": "",
+      "example": "Ti sei appena convinto che il lavoro da remoto e il futuro. Ma poi una voce interna dice: 'Aspetta — e la collaborazione spontanea? E i junior che hanno bisogno di mentoring?' Non riesci a smettere di discutere con te stesso."
     },
     "2_10": {
       "name": "Generativo/brainstorming",
       "profile": "Generi molte idee senza giudizio.",
       "strength": "Creativita, esplorazione",
       "risk": "Difficolta a convergere: troppe opzioni, nessuna scelta",
-      "llm": ""
+      "llm": "",
+      "example": "In un brainstorming, mentre tutti sono ancora sull'idea numero 2, tu ne hai gia buttate fuori dieci — alcune folli, altre pratiche. Non le giudichi ancora: prima viene la quantita, poi il filtro."
     },
     "2_11": {
       "name": "Traduzione tra domini",
       "profile": "Riformuli in un altro framework.",
       "strength": "Interdisciplinarita, comunicazione cross-team",
       "risk": "Rischio di forzare il framework sbagliato",
-      "llm": ""
+      "llm": "",
+      "example": "Sei un marketer e devi capire un problema di supply chain. Lo traduci in termini di marketing: 'Quindi la fabbrica e come una pipeline di contenuti, e il collo di bottiglia e come la coda di approvazione delle campagne?' Improvvisamente ha senso."
     },
     "2_12": {
       "name": "Narrazione",
       "profile": "Capisci costruendo una storia.",
       "strength": "Comunicazione, memoria, coinvolgimento",
       "risk": "Rischio di narrativizzare tutto, anche dove serve analisi",
-      "llm": "\"Raccontami la storia di come...\" \"Spiegamelo come una narrazione con un protagonista e un conflitto.\""
+      "llm": "\"Raccontami la storia di come...\" \"Spiegamelo come una narrazione con un protagonista e un conflitto.\"",
+      "example": "Non spieghi un piano di progetto con punti elenco — racconti la storia: 'Allora, prima il cliente ci ha chiamati in panico per la scadenza. Abbiamo riunito il team, ci siamo incagliati sull'API, ma poi Maria ha trovato una scorciatoia...'"
     },
     "2_13": {
       "name": "Simulazione mentale",
       "profile": "Testi scenari \"what if\" mentalmente.",
       "strength": "Pianificazione, anticipazione di rischi",
       "risk": "Rischio di paralisi da scenario negativo",
-      "llm": ""
+      "llm": "",
+      "example": "Prima di lanciare un nuovo prodotto, chiudi gli occhi e immagini che siano passati sei mesi ed e stato un flop. 'Cosa e andato storto?' ti chiedi — e improvvisamente i rischi che prima erano invisibili diventano evidenti."
     },
     "2_14": {
       "name": "Pattern recognition",
       "profile": "Riconosci ricorrenze e regolarita.",
       "strength": "Velocita, esperienza applicata",
       "risk": "Falsi positivi: vedere pattern che non ci sono",
-      "llm": ""
+      "llm": "",
+      "example": "Un nuovo assunto commette un errore, e tu pensi subito: 'Gia visto — ogni volta che saltiamo la checklist di onboarding, succede la stessa cosa alla terza settimana.' Riconosci lo schema prima che gli altri se ne accorgano."
     },
     "2_15": {
       "name": "Competizione/gioco",
       "profile": "Pensi meglio sotto sfida.",
       "strength": "Motivazione, performance sotto pressione",
       "risk": "Dipendenza dall'avversario; non tutto e una gara",
-      "llm": ""
+      "llm": "",
+      "example": "Scrivi codice migliore quando c'e una deadline, prepari presentazioni migliori quando sai che il pubblico sara tosto, e in segreto ti piace quando qualcuno dice 'scommetto che non ce la fai in una settimana.'"
     },
     "2_16": {
       "name": "Metacognitivo",
       "profile": "Pensi al tuo modo di pensare.",
       "strength": "Adattabilita, scelta della strategia giusta",
       "risk": "Rischio di meta-loop: pensare al pensare senza pensare",
-      "llm": ""
+      "llm": "",
+      "example": "A meta della risoluzione di un problema, ti fermi e pensi: 'Aspetta, ma sto usando l'approccio giusto? Forse dovrei fare brainstorming invece di analizzare.' Ti trovi costantemente a fare un passo indietro per valutare il tuo stesso processo di pensiero."
     },
     "2_17": {
       "name": "Perspective-taking",
       "profile": "Assumi altri punti di vista.",
       "strength": "Empatia, comprensione di stakeholder",
       "risk": "Rischio di perdere la propria posizione",
-      "llm": ""
+      "llm": "",
+      "example": "Durante una discussione su un prodotto, dici naturalmente: 'Ma il team di assistenza clienti come la vede? E l'utente finale che non e tecnico?' Ruoti istintivamente tra i diversi punti di vista."
     },
     "3_1": {
       "name": "Divergente",
       "profile": "Esplori, espandi, generi opzioni.",
       "strength": "Creativita, completezza",
       "risk": "Non convergere mai",
-      "llm": "\"Dammi 10 approcci diversi a questo problema, anche non convenzionali.\""
+      "llm": "\"Dammi 10 approcci diversi a questo problema, anche non convenzionali.\"",
+      "example": "Quando pianifichi una vacanza, non scegli subito una meta — cerchi dieci paesi, cinque stili di viaggio, tre fasce di budget. Il tuo partner dice 'ma scegli!' ma tu hai bisogno di vedere tutte le opzioni prima di decidere."
     },
     "3_2": {
       "name": "Convergente",
       "profile": "Selezioni, tagli, arrivi al punto.",
       "strength": "Efficienza, decisionalita",
       "risk": "Chiudere troppo presto",
-      "llm": "\"Tra queste opzioni, qual e la migliore e perche? Sii diretto.\""
+      "llm": "\"Tra queste opzioni, qual e la migliore e perche? Sii diretto.\"",
+      "example": "Al ristorante con un menu di dieci pagine, lo scorri una volta e decidi in trenta secondi. Mentre i tuoi amici si tormentano sulle scelte, tu hai gia ordinato — hai eliminato rapidamente le opzioni che non facevano al caso tuo."
     },
     "3_3": {
       "name": "Laterale",
       "profile": "Cambi frame, salti di prospettiva.",
       "strength": "Soluzioni non ovvie, innovazione",
       "risk": "Instabilita: cambiare frame prima di aver esplorato quello corrente",
-      "llm": "\"Riformula questo problema da un'angolazione completamente diversa.\""
+      "llm": "\"Riformula questo problema da un'angolazione completamente diversa.\"",
+      "example": "Tutti stanno cercando di velocizzare il sito ottimizzando il codice. Tu dici: 'E se il problema non fosse la velocita — e se gli utenti non avessero proprio bisogno di questa pagina?' Hai saltato a un frame completamente diverso."
     },
     "3_4": {
       "name": "Astrattivo",
       "profile": "Sali di livello: dal caso al principio.",
       "strength": "Generalizzazione, teoria",
       "risk": "Perdita del concreto",
-      "llm": ""
+      "llm": "",
+      "example": "Quando un collega si lamenta del capo, non pensi alla persona specifica — pensi subito 'questo e un problema di leadership, non di persone' e fai zoom out sul principio generale."
     },
     "3_5": {
       "name": "Concretizzante",
       "profile": "Scendi di livello: dal principio al caso.",
       "strength": "Praticita, implementazione",
       "risk": "Difficolta a generalizzare",
-      "llm": ""
+      "llm": "",
+      "example": "Qualcuno ti spiega la 'metodologia agile' in termini astratti e tu chiedi subito: 'OK ma fammi vedere — come funziona uno sprint il lunedi mattina? Cosa fa concretamente il team?' Hai bisogno del caso concreto per capire."
     },
     "3_6": {
       "name": "Sottrattivo",
       "profile": "Migliori togliendo.",
       "strength": "Essenzialita, eleganza",
       "risk": "Rischio di togliere troppo",
-      "llm": "\"Cosa posso togliere da questa soluzione senza perdere l'essenziale?\""
+      "llm": "\"Cosa posso togliere da questa soluzione senza perdere l'essenziale?\"",
+      "example": "Rivedi la presentazione di 20 slide di un collega e il tuo feedback e sempre lo stesso: 'Taglia le slide 3, 7, 12 e 15 — non aggiungono nulla.' Migliori le cose togliendo, mai aggiungendo."
     },
     "3_7": {
       "name": "Compressivo",
       "profile": "Riduci alla formula minima.",
       "strength": "Sintesi, chiarezza",
       "risk": "Perdita di sfumature",
-      "llm": "\"Riassumilo in una frase.\" \"Qual e il nocciolo?\""
+      "llm": "\"Riassumilo in una frase.\" \"Qual e il nocciolo?\"",
+      "example": "Dopo una riunione di un'ora, tutti escono con pagine di appunti. Tu esci con una sola frase: 'Il vero problema e la fiducia tra vendite e ingegneria.' Comprimi tutto alla sua essenza."
     },
     "3_8": {
       "name": "Scala temporale",
       "profile": "Ricontestualizzi nel tempo.",
       "strength": "Visione strategica, prospettiva",
       "risk": "Rischio di rimandare l'azione al \"lungo termine\"",
-      "llm": ""
+      "llm": "",
+      "example": "Quando qualcuno propone di adottare una nuova tecnologia, il tuo primo pensiero non e 'funziona adesso?' ma 'dove sara tra cinque anni? E cosa sarebbe successo se l'avessimo adottata tre anni fa?'"
     },
     "4_1": {
       "name": "Voce",
       "profile": "Parli per pensare e comunicare.",
       "strength": "Velocita, interattivita",
       "risk": "Volatilita: il parlato non resta",
-      "llm": ""
+      "llm": "",
+      "example": "Quando sei bloccato su un problema, cerchi un collega e dici 'fammi ragionare ad alta voce un attimo.' Parlare e il tuo modo di elaborare — le idee confuse nella testa diventano chiare nel momento in cui le pronunci."
     },
     "4_2": {
       "name": "Scrittura",
       "profile": "Scrivi per pensare e comunicare.",
       "strength": "Permanenza, revisione, distribuzione",
       "risk": "Lentezza; rischio di over-editing",
-      "llm": ""
+      "llm": "",
+      "example": "Tieni un diario personale, scrivi email lunghe e prendi appunti dettagliati in riunione. Scrivere non e una fatica per te — e il tuo modo di pensare. Mettere le parole su carta rende le tue idee reali."
     },
     "4_3": {
       "name": "Diagramma",
       "profile": "Disegni per pensare e comunicare.",
       "strength": "Visione d'insieme, relazioni",
       "risk": "Non tutti capiscono i diagrammi; linearizzazione necessaria",
-      "llm": ""
+      "llm": "",
+      "example": "In qualsiasi riunione, sei quello che si alza e va alla lavagna a disegnare caselle e frecce. Non riesci a spiegare un processo senza schematizzarlo — il diagramma E la tua spiegazione."
     },
     "4_4": {
       "name": "Gesto/prototipo",
       "profile": "Costruisci per pensare e comunicare.",
       "strength": "Tangibilita, test rapido",
       "risk": "Non scalabile per comunicazione remota",
-      "llm": ""
+      "llm": "",
+      "example": "Invece di descrivere la tua idea di app in un documento, costruisci un prototipo rapido con cartone e post-it — o salti direttamente nel codice. Capisci costruendo, non scrivendo."
     },
     "4_5": {
       "name": "Codice/formale",
       "profile": "Formalizzi per pensare e comunicare.",
       "strength": "Precisione, eseguibilita",
       "risk": "Barriera di accesso per interlocutori non tecnici",
-      "llm": ""
+      "llm": "",
+      "example": "Quando qualcuno ti spiega un problema di business, lo traduci subito in pseudocodice o formula: 'Quindi ricavo = utenti x conversione x prezzo, e il problema e nella variabile conversione.' Formalizzare e il tuo linguaggio naturale."
     },
     "5_1": {
       "name": "Deduttivo",
       "profile": "Ragioni da principi a conseguenze.",
       "strength": "Rigore, certezza",
       "risk": "Rigidita: se le premesse sono sbagliate, tutto crolla",
-      "llm": "\"Dammi un ragionamento step-by-step con premesse esplicite.\""
+      "llm": "\"Dammi un ragionamento step-by-step con premesse esplicite.\"",
+      "example": "Quando qualcuno dice 'dovremmo alzare i prezzi,' tu pensi: 'Se la domanda e anelastica E i nostri costi sono saliti, ALLORA un aumento di prezzo e giustificato.' Ragioni dalle premesse alle conclusioni, come una dimostrazione logica."
     },
     "5_2": {
       "name": "Induttivo",
       "profile": "Generalizzi da casi osservati.",
       "strength": "Empirismo, adattabilita",
       "risk": "Generalizzazione prematura; campione insufficiente",
-      "llm": "\"Mostrami 5 esempi di X e poi generalizza il pattern.\""
+      "llm": "\"Mostrami 5 esempi di X e poi generalizza il pattern.\"",
+      "example": "Dopo tre progetti in cui la scadenza e saltata, concludi: 'Ogni volta che saltiamo la fase di pianificazione, consegniamo in ritardo. Quindi la regola e: niente piano, niente deadline.' Costruisci i tuoi principi dai casi osservati."
     },
     "5_3": {
       "name": "Abduttivo",
       "profile": "Cerchi la spiegazione piu plausibile.",
       "strength": "Generazione di ipotesi, diagnostica",
       "risk": "Conferma della prima ipotesi plausibile (satisficing)",
-      "llm": "\"Dati questi fatti, qual e l'ipotesi piu plausibile? E quali sono le alternative?\""
+      "llm": "\"Dati questi fatti, qual e l'ipotesi piu plausibile? E quali sono le alternative?\"",
+      "example": "Le vendite sono calate questo trimestre. Non hai tutti i dati, ma pensi: 'La spiegazione piu probabile e il nuovo listino del concorrente, perche i tempi coincidono e il nostro prodotto non e cambiato.' Scommetti sull'ipotesi migliore."
     },
     "5_4": {
       "name": "Analogico",
       "profile": "Trasferisci da un dominio a un altro.",
       "strength": "Creativita, interdisciplinarita",
       "risk": "Analogie errate; correlazione spacciata per causalita",
-      "llm": "\"In quale altro dominio esiste un problema strutturalmente simile?\""
+      "llm": "\"In quale altro dominio esiste un problema strutturalmente simile?\"",
+      "example": "Il team non riesce a mettersi d'accordo su come dividere le responsabilita. Tu dici: 'E come la divisione cellulare in biologia — ogni cellula ha bisogno di una copia completa del DNA prima di separarsi.' L'analogia da un altro dominio sblocca la soluzione."
     }
   },
   "gaps": {
@@ -645,5 +687,91 @@
     "modelDesc": "Abbiamo identificato 5 dimensioni indipendenti che descrivono il profilo di pensiero di una persona:",
     "papers": "Paper e riferimenti scientifici",
     "papersDesc": "Il modello si basa su ricerca peer-reviewed in neuroscienze, psicologia cognitiva e filosofia della mente."
+  },
+  "deepening": {
+    "DA1": {
+      "text": "Hai descritto un forte dialogo interiore. Immagina di dover decidere se accettare un'offerta di lavoro rischiosa. Come usi quella voce nella testa?",
+      "a": "Discuto con me stesso: formulo argomenti a favore e contro, come un dibattito interno tra due avvocati",
+      "b": "Mi racconto la storia: \"Se accetto, succede X, poi Y...\" -- costruisco una narrazione passo dopo passo",
+      "c": "Mi spiego il problema ad alta voce, come se dovessi convincere qualcuno, anche se sono solo",
+      "d": "Formulo obiezioni precise: \"Ma questo presuppone che...\" -- smonto le mie stesse premesse con domande taglienti"
+    },
+    "DA2": {
+      "text": "Pensi molto per immagini. Un cliente ti chiede di ripensare un processo aziendale inefficiente. Come visualizzi il problema?",
+      "a": "Vedo una mappa di relazioni: chi influenza chi, dove si creano i colli di bottiglia, le connessioni nascoste",
+      "b": "Faccio uno \"zoom out\" mentale: vedo il sistema dall'alto, come una fotografia aerea, per cogliere il quadro generale",
+      "c": "Visualizzo i dettagli concreti: le scrivanie, le persone, i documenti che passano di mano -- il processo prende forma fisica",
+      "d": "Scompongo l'immagine in pezzi: vedo i singoli componenti separati, come un esploso meccanico, per capire cosa togliere"
+    },
+    "DA3": {
+      "text": "Il tuo corpo ti guida nel pensiero. Devi scegliere tra tre fornitori per un progetto importante. Come usi quella sensazione viscerale?",
+      "a": "Riconosco un pattern dall'esperienza: il corpo reagisce perché ha già \"visto\" situazioni simili, anche se non ricordo quando",
+      "b": "Formo un'ipotesi iniziale basata sulla sensazione e poi cerco dati per confermarla o smentirla",
+      "c": "Provo e aggiusto: faccio un piccolo test con un fornitore, sento come reagisce il corpo, e decido se continuare",
+      "d": "Ho bisogno di toccare con mano: visito i fornitori, vedo i loro spazi, stringo mani -- il corpo mi dice più delle slide"
+    },
+    "DB1": {
+      "text": "Tendi a sfidare le idee per testarle. In una riunione hai appena demolito la proposta del team. Cosa fai dopo?",
+      "a": "Convergo verso una decisione: ho eliminato le opzioni deboli, ora scelgo la migliore tra quelle sopravvissute",
+      "b": "Apro nuove domande: la critica ha rivelato aspetti che nessuno aveva considerato, voglio esplorare quei territori",
+      "c": "Mi interrogo su me stesso: \"Sto demolendo perché l'idea è debole, o perché non la capisco abbastanza?\"",
+      "d": "Prendo la prospettiva dell'altro: ricostruisco la proposta dal punto di vista di chi l'ha fatta, cercando il valore che mi è sfuggito"
+    },
+    "DB2": {
+      "text": "Accumuli informazioni prima di decidere. Stai valutando se espandere l'azienda in un nuovo mercato. Come arrivi all'insight?",
+      "a": "Raccolgo dati da fonti diverse -- concorrenti, clienti, trend -- e a un certo punto le connessioni emergono da sole",
+      "b": "Noto prima le ripetizioni: se tre fonti indipendenti dicono la stessa cosa, quello diventa il mio punto di partenza",
+      "c": "Aspetto la spiegazione migliore: accumulo finché non trovo l'ipotesi che spiega il maggior numero di dati con il minor sforzo",
+      "d": "Convergo rapidamente: dopo un certo volume di dati, sento che ne ho abbastanza e prendo la decisione senza cercare la perfezione"
+    },
+    "DB3": {
+      "text": "Migliori le cose per iterazione. Stai sviluppando una presentazione importante. Come procede il tuo processo iterativo?",
+      "a": "Ogni giro semplifico: la prima versione è lunga e confusa, la seconda più chiara, la terza essenziale",
+      "b": "Ogni giro comprimo: cerco la frase che contiene tutto, il concetto che riassume dieci slide in una",
+      "c": "Prototipo fisicamente: stampo, ritaglio, sposto i fogli sul tavolo, riorganizzo con le mani prima di tornare al computer",
+      "d": "Scrivo per pensare: ogni versione mi rivela cosa penso davvero, e la prossima corregge quello che ho scoperto"
+    },
+    "DC1": {
+      "text": "Generi molte idee quando pensi. Il team deve trovare un nuovo nome per un prodotto. Come ti muovi?",
+      "a": "Pura quantità: butto fuori tutto quello che mi viene, senza filtro, anche le idee ridicole -- poi selezionerò",
+      "b": "Riformulo il problema: \"E se non fosse un nome ma un verbo? Un suono? Un'emozione?\" -- cambio le regole del gioco",
+      "c": "Uso analogie: \"Cos'è come il nostro prodotto in un altro mondo? In cucina? Nello sport?\" -- importo da altri domini",
+      "d": "Divergo e poi convergo: genero molto, ma poi raggruppo, voto, elimino -- il divergere ha senso solo se poi seleziono"
+    },
+    "DC2": {
+      "text": "Tendi a semplificare togliendo. Il tuo report di 30 pagine deve diventare un documento esecutivo. Come procedi?",
+      "a": "Elimino features: rimuovo ogni sezione che non risponde direttamente alla domanda del decisore",
+      "b": "Comprimo all'essenza: cerco la singola frase che cattura il messaggio centrale, e costruisco intorno a quella",
+      "c": "Scompongo e poi rimuovo: separo il report in blocchi logici, valuto ogni blocco, e scarto quelli che non reggono da soli",
+      "d": "Elimino opzioni: delle 5 raccomandazioni, ne tengo una sola -- quella che il lettore può eseguire domani mattina"
+    },
+    "DD1": {
+      "text": "Pensi spesso attraverso la voce. Stai lavorando a un problema strategico complesso. Quando entra in gioco la voce?",
+      "a": "Quando sono solo: parlo ad alta voce con me stesso, passeggio e ragiono a voce come se avessi un interlocutore invisibile",
+      "b": "Quando ho qualcuno con cui parlare: ho bisogno di un altro cervello, anche solo come specchio -- il dialogo sblocca il pensiero",
+      "c": "Quando devo insegnare: preparare una spiegazione per altri mi costringe a capire davvero cosa penso",
+      "d": "Quando la scrittura mi blocca: so cosa voglio dire ma non riesco a scriverlo, finché non lo dico a voce e poi trascrivo"
+    },
+    "DD2": {
+      "text": "Usi molto diagrammi e schemi. Devi spiegare al board una riorganizzazione aziendale. Cosa disegni?",
+      "a": "Gerarchie e strutture: organigrammi, alberi decisionali, livelli di responsabilità -- chi sta sopra chi",
+      "b": "Scomposizioni: il problema grande diviso in sotto-problemi, ogni sotto-problema in componenti -- un esploso logico",
+      "c": "Flussi narrativi: la storia della riorganizzazione come una sequenza di eventi, con frecce che mostrano causa ed effetto",
+      "d": "Disegno ma poi non riesco a verbalizzare: lo schema è chiaro nella mia testa e sulla lavagna, ma tradurlo in parole lo impoverisce"
+    },
+    "DE1": {
+      "text": "Generi ipotesi partendo da indizi incompleti. Un progetto sta andando male ma nessuno capisce perché. Come arrivi a una spiegazione?",
+      "a": "Simulo scenari: \"Se fosse X la causa, cosa vedremmo? E se fosse Y?\" -- testo mentalmente ogni ipotesi contro i fatti",
+      "b": "Uso analogie: \"Questa situazione mi ricorda quando...\" -- importo spiegazioni da contesti diversi",
+      "c": "Riconosco pattern: ho visto abbastanza progetti fallire da riconoscere i segnali -- l'esperienza parla prima della logica",
+      "d": "Elimino alternative: parto da tutte le cause possibili e le tolgo una per una, finché resta la più probabile"
+    },
+    "DE2": {
+      "text": "Ragioni spesso dal generale al particolare. Devi valutare se una startup merita un investimento. Come strutturi l'analisi?",
+      "a": "Parto dai principi: \"Un buon investimento deve avere X, Y, Z\" -- poi verifico se la startup li soddisfa, punto per punto",
+      "b": "Scompongo il problema: mercato, team, prodotto, finanze -- analizzo ogni dimensione separatamente con criteri predefiniti",
+      "c": "Mi contraddico di proposito: formulo la tesi \"questa startup avrà successo\" e poi cerco sistematicamente le prove che la smentiscono",
+      "d": "Verifico empiricamente: la logica mi dà una direzione, ma poi voglio dati reali, test, feedback dal mercato -- i principi da soli non bastano"
+    }
   }
 }

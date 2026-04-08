@@ -25,6 +25,9 @@
 						<strong>{$t(meta.nameKey)}</strong>
 						<span class="count">({count})</span>
 					</div>
+					{#if meta.exampleKey && $t(meta.exampleKey) !== meta.exampleKey}
+						<p class="example">{$t(meta.exampleKey)}</p>
+					{/if}
 					<div class="details">
 						<p><span class="label">{$t('results.strength')}:</span> {$t(meta.strengthKey)}</p>
 						<p><span class="label">{$t('results.risk')}:</span> {$t(meta.riskKey)}</p>
@@ -86,6 +89,16 @@
 	.count {
 		font-size: 0.8rem;
 		color: var(--text-secondary);
+	}
+	.example {
+		margin: 0 0 0.5rem;
+		padding: 0.6rem 0.8rem;
+		background: var(--bg-hover);
+		border-radius: 8px;
+		font-size: 0.88rem;
+		line-height: 1.5;
+		color: var(--text);
+		font-style: italic;
 	}
 	.details p {
 		margin: 0.25rem 0;

@@ -8,16 +8,23 @@
 	import ProgressBar from '$lib/components/ProgressBar.svelte';
 
 	$: currentSection = $quiz.currentSection;
+	$: inDeepening = $quiz.inDeepening;
+	$: deepeningQuestions = $quiz.deepeningQuestions;
 	$: section = sections[currentSection];
-	$: sectionQuestions = questions.filter((q) => q.section === section?.id);
-	$: isLast = currentSection === sections.length - 1;
+	$: sectionQuestions = inDeepening ? deepeningQuestions : questions.filter((q) => q.section === section?.id);
+	$: isLast = currentSection === sections.length - 1 && !inDeepening;
 
 	function next() {
-		if (isLast) {
+		if (isLast || ($quiz.completed)) {
 			quiz.nextSection();
 			goto(`${base}/results`);
 		} else {
 			quiz.nextSection();
+			// Check if we just completed and need to redirect
+			if ($quiz.completed) {
+				goto(`${base}/results`);
+				return;
+			}
 			if (typeof window !== 'undefined') {
 				window.scrollTo({ top: 0, behavior: 'smooth' });
 			}
@@ -40,17 +47,28 @@
 <div class="quiz-page" aria-live="polite">
 	<ProgressBar currentSection={currentSection} />
 
-	<h2 class="section-title">
-		<span class="section-letter">{section?.id}</span>
-		{$t(section?.labelKey || '')}
-	</h2>
+	{#if inDeepening}
+		<div class="deepening-badge">
+			<span class="badge-icon">&#x1F50D;</span>
+			{$t('quiz.deepeningTitle') || 'Deepening'}
+		</div>
+		<h2 class="section-title">
+			<span class="section-letter deep">+</span>
+			{$t('quiz.deepeningSubtitle') || 'Based on your answers, we have a few more questions'}
+		</h2>
+	{:else}
+		<h2 class="section-title">
+			<span class="section-letter">{section?.id}</span>
+			{$t(section?.labelKey || '')}
+		</h2>
+	{/if}
 
 	{#each sectionQuestions as q (q.id)}
 		<Question question={q} answers={$quiz.answers[q.id] || []} />
 	{/each}
 
 	<nav class="nav-buttons">
-		{#if currentSection > 0}
+		{#if currentSection > 0 || inDeepening}
 			<button class="btn btn-secondary" on:click={prev}>
 				{$t('quiz.prev')}
 			</button>
@@ -66,6 +84,22 @@
 <style>
 	.quiz-page {
 		padding-bottom: 2rem;
+	}
+	.deepening-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.3rem 0.8rem;
+		background: var(--accent-bg);
+		border: 1px solid var(--accent-light);
+		border-radius: 20px;
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: var(--accent);
+		margin-bottom: 0.75rem;
+	}
+	.badge-icon {
+		font-size: 0.9rem;
 	}
 	.section-title {
 		display: flex;
@@ -87,6 +121,9 @@
 		font-weight: 800;
 		font-size: 0.9rem;
 		flex-shrink: 0;
+	}
+	.section-letter.deep {
+		background: var(--warning);
 	}
 	.nav-buttons {
 		display: flex;
