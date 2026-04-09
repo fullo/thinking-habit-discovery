@@ -722,7 +722,17 @@
     "model": "Il modello a 5 dimensioni",
     "modelDesc": "Abbiamo identificato 5 dimensioni indipendenti che descrivono il profilo di pensiero di una persona:",
     "papers": "Paper e riferimenti scientifici",
-    "papersDesc": "Il modello si basa su ricerca peer-reviewed in neuroscienze, psicologia cognitiva e filosofia della mente."
+    "papersDesc": "Il modello si basa su ricerca peer-reviewed in neuroscienze, psicologia cognitiva e filosofia della mente.",
+    "skillTitle": "Claude Code Skill",
+    "skillIntro": "Questo modello e disponibile anche come plugin per Claude Code. Una volta installato, Claude adatta automaticamente le sue risposte al tuo profilo cognitivo.",
+    "skill1Title": "Scopri il tuo profilo",
+    "skill1Desc": "15 domande scenario-based + approfondimento adattivo. Salva il profilo in memoria: Claude si adatta a come pensi in tutte le conversazioni future.",
+    "skill2Title": "Traduci i tuoi prompt",
+    "skill2Desc": "Scrivi nel tuo modo naturale. La skill riformula il prompt nel formato ottimale per il LLM, colmando il gap tra come pensi e come il LLM riceve.",
+    "skill3Title": "Media tra profili",
+    "skill3Desc": "Prendi un messaggio scritto da te e riformulalo per qualcuno con un profilo cognitivo diverso. Utile per comunicazione cross-team.",
+    "installTitle": "Installazione",
+    "installNote": "Richiede Claude Code CLI. Il profilo viene salvato in memoria e persiste tra sessioni."
   },
   "deepening": {
     "DA1": {

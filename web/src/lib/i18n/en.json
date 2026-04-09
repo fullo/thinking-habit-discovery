@@ -663,7 +663,17 @@
     "model": "The 5-Dimension Model",
     "modelDesc": "We identified 5 independent dimensions that describe a person's thinking profile:",
     "papers": "Scientific References",
-    "papersDesc": "The model is grounded in peer-reviewed research from neuroscience, cognitive psychology, and philosophy of mind."
+    "papersDesc": "The model is grounded in peer-reviewed research from neuroscience, cognitive psychology, and philosophy of mind.",
+    "skillTitle": "Claude Code Skill",
+    "skillIntro": "This model is also available as a Claude Code plugin. Once installed, Claude automatically adapts its responses to your cognitive profile.",
+    "skill1Title": "Discover your profile",
+    "skill1Desc": "15 scenario-based questions + adaptive deepening. Saves your profile to memory: Claude adapts to how you think in all future conversations.",
+    "skill2Title": "Translate your prompts",
+    "skill2Desc": "Write in your natural way. The skill reformulates your prompt into the optimal format for the LLM, bridging the gap between how you think and how the LLM receives.",
+    "skill3Title": "Bridge between profiles",
+    "skill3Desc": "Take a message you wrote and reformulate it for someone with a different cognitive profile. Useful for cross-team communication.",
+    "installTitle": "Installation",
+    "installNote": "Requires Claude Code CLI. Your profile is saved to memory and persists across sessions."
   },
   "deepening": {
     "DA1": {

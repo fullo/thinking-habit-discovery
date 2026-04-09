@@ -42,6 +42,51 @@
 		</div>
 	</section>
 
+	<section class="skill-section">
+		<h2>{$t('about.skillTitle')}</h2>
+		<p>{$t('about.skillIntro')}</p>
+
+		<div class="skill-grid">
+			<div class="skill-card primary">
+				<div class="skill-header">
+					<span class="skill-cmd">/thinking-profile</span>
+				</div>
+				<h3>{$t('about.skill1Title')}</h3>
+				<p>{$t('about.skill1Desc')}</p>
+			</div>
+			<div class="skill-card">
+				<div class="skill-header">
+					<span class="skill-cmd">/thinking-translator</span>
+				</div>
+				<h3>{$t('about.skill2Title')}</h3>
+				<p>{$t('about.skill2Desc')}</p>
+			</div>
+			<div class="skill-card">
+				<div class="skill-header">
+					<span class="skill-cmd">/thinking-bridge</span>
+				</div>
+				<h3>{$t('about.skill3Title')}</h3>
+				<p>{$t('about.skill3Desc')}</p>
+			</div>
+		</div>
+
+		<div class="install-box">
+			<h3>{$t('about.installTitle')}</h3>
+			<div class="code-block">
+				<code>claude plugin marketplace add fullo/claude-plugins-marketplace</code>
+			</div>
+			<div class="code-block">
+				<code>claude plugin install thinking-habit@fullo-plugins</code>
+			</div>
+			<p class="install-note">{$t('about.installNote')}</p>
+			<div class="install-links">
+				<a href="https://github.com/fullo/claude-thinking-habit" target="_blank" rel="noopener noreferrer" class="install-link">GitHub</a>
+				<a href="https://fullo.github.io/claude-thinking-habit/" target="_blank" rel="noopener noreferrer" class="install-link">Plugin website</a>
+				<a href="https://github.com/fullo/claude-plugins-marketplace" target="_blank" rel="noopener noreferrer" class="install-link">Marketplace</a>
+			</div>
+		</div>
+	</section>
+
 	<section class="papers-section">
 		<h2>{$t('about.papers')}</h2>
 		<p class="papers-intro">{$t('about.papersDesc')}</p>
@@ -112,6 +157,91 @@
 	.dim-card p {
 		font-size: 0.85rem;
 		color: var(--text-secondary);
+	}
+	.skill-section {
+		margin-top: 2rem;
+		padding-top: 2rem;
+		border-top: 2px solid var(--border);
+	}
+	.skill-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+		margin: 1.25rem 0 1.5rem;
+	}
+	.skill-card {
+		padding: 1.25rem;
+		border: 1px solid var(--border);
+		border-radius: 10px;
+		background: var(--bg);
+	}
+	.skill-card.primary {
+		border-color: var(--accent);
+		box-shadow: 0 0 0 1px var(--accent-light);
+	}
+	.skill-header {
+		margin-bottom: 0.5rem;
+	}
+	.skill-cmd {
+		font-family: 'JetBrains Mono', ui-monospace, monospace;
+		font-size: 0.78rem;
+		font-weight: 600;
+		padding: 0.15rem 0.5rem;
+		background: var(--bg-hover);
+		border-radius: 4px;
+		color: var(--accent);
+	}
+	.skill-card h3 {
+		font-size: 0.95rem;
+		margin-bottom: 0.3rem;
+	}
+	.skill-card p {
+		font-size: 0.83rem;
+		color: var(--text-secondary);
+		line-height: 1.5;
+	}
+	.install-box {
+		padding: 1.25rem;
+		background: var(--bg-hover);
+		border-radius: 10px;
+		margin-top: 1rem;
+	}
+	.install-box h3 {
+		font-size: 0.95rem;
+		margin-bottom: 0.75rem;
+	}
+	.code-block {
+		margin-bottom: 0.5rem;
+	}
+	.code-block code {
+		display: block;
+		font-family: 'JetBrains Mono', ui-monospace, monospace;
+		font-size: 0.82rem;
+		padding: 0.5rem 0.75rem;
+		background: #1e293b;
+		color: #e2e8f0;
+		border-radius: 6px;
+		overflow-x: auto;
+	}
+	.install-note {
+		font-size: 0.82rem;
+		color: var(--text-secondary);
+		margin: 0.75rem 0;
+		font-style: italic;
+	}
+	.install-links {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+	}
+	.install-link {
+		font-size: 0.82rem;
+		font-weight: 600;
+		color: var(--accent);
+		text-decoration: none;
+	}
+	.install-link:hover {
+		text-decoration: underline;
 	}
 	.papers-section {
 		margin-top: 2rem;
