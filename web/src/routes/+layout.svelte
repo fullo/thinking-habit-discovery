@@ -26,6 +26,7 @@
 	<nav class="header-nav" aria-label="Main">
 		<a href="{base}/about" class="nav-link">About</a>
 		<a href="{base}/blog" class="nav-link">Blog</a>
+		<a href="{base}/skills" class="nav-link">Skills</a>
 	</nav>
 	<div class="header-controls">
 		<ThemeToggle />

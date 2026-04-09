@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Scopri il tuo profilo di pensiero con un questionario scientifico basato su 5 dimensioni cognitive" />
+		
+		<link href="./_app/immutable/assets/0.uUTxWv9A.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/8.vATWLCnM.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.Ds_0-zCI.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.CazvyBWJ.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.CuxA3FYZ.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.x5FPe1W9.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.Cr8d8-PV.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.BQ24v_F8.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.XSn5-khT.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.Bw4pcX8O.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/globals.D0QH3NT1.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/locale.CTt7jxne.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/8.CL4iEMBp.js"><title>Claude Code Skills — Scopri il tuo Profilo di Pensiero</title><!-- HEAD_svelte-v6h9y6_START --><!-- HEAD_svelte-v6h9y6_END --><!-- HEAD_svelte-1dv0j96_START --><meta name="description" content="Plugin per Claude Code che adatta le risposte al tuo profilo cognitivo"><!-- HEAD_svelte-1dv0j96_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">   <a href="#main-content" class="skip-link svelte-1h9w37c" data-svelte-h="svelte-1wz5wva">Skip to content</a> <header class="site-header svelte-1h9w37c"><a href="./" class="logo svelte-1h9w37c">Scopri il tuo Profilo di Pensiero</a> <nav class="header-nav svelte-1h9w37c" aria-label="Main" data-svelte-h="svelte-1hw6pbb"><a href="./about" class="nav-link svelte-1h9w37c">About</a> <a href="./blog" class="nav-link svelte-1h9w37c">Blog</a> <a href="./skills" class="nav-link svelte-1h9w37c">Skills</a></nav> <div class="header-controls svelte-1h9w37c"><button class="theme-toggle svelte-wpw6pa" aria-label="Theme: Auto" title="Auto"><span class="icon">◑</span> </button> <div class="lang-switch svelte-r917w4" role="radiogroup" aria-label="Language"><button aria-checked="true" role="radio" class="svelte-r917w4 active">IT</button> <button aria-checked="false" role="radio" class="svelte-r917w4">EN</button> </div></div></header> <main id="main-content" class="svelte-1h9w37c"> <article class="skills-page svelte-1y783e1"><h1 class="svelte-1y783e1">Claude Code Skills</h1> <p class="intro svelte-1y783e1">Questo modello e disponibile come plugin per Claude Code con 3 skill. Una volta installato e completato il profilo, Claude adatta automaticamente le sue risposte al tuo modo di pensare.</p> <section class="skills-grid svelte-1y783e1"><div class="skill-card primary svelte-1y783e1"><div class="skill-header svelte-1y783e1"><span class="skill-cmd svelte-1y783e1" data-svelte-h="svelte-5rl6zq">/thinking-profile</span> <span class="skill-badge svelte-1y783e1">Principale</span></div> <h2 class="svelte-1y783e1">Scopri il tuo profilo</h2> <p class="skill-desc svelte-1y783e1">15 domande scenario-based + approfondimento adattivo. Mappa il tuo stile cognitivo su 5 dimensioni e salva il profilo in memoria. Da quel momento Claude si adatta a come pensi in tutte le conversazioni future.</p> <div class="skill-details svelte-1y783e1"><h3 class="svelte-1y783e1">Come funziona</h3> <ol class="svelte-1y783e1"><li>Controlla se hai gia un profilo salvato in memoria</li> <li>15 domande raggruppate per dimensione (canale, strategia, direzione, medium, logica)</li> <li>0-3 domande di approfondimento adattivo basate sui tuoi pattern emergenti</li> <li>Calcola il profilo con dominante + secondario per ogni dimensione e analisi gap</li> <li>Salva il profilo in memoria con istruzioni di adattamento per Claude</li></ol></div> <p class="skill-note svelte-1y783e1">Si fa una volta sola. Il profilo resta in memoria e viene usato automaticamente in tutte le conversazioni future.</p></div> <div class="skill-card svelte-1y783e1"><div class="skill-header svelte-1y783e1" data-svelte-h="svelte-1cdn5tv"><span class="skill-cmd svelte-1y783e1">/thinking-translator</span></div> <h2 class="svelte-1y783e1">Traduci i tuoi prompt</h2> <p class="skill-desc svelte-1y783e1">Scrivi nel tuo modo naturale e la skill riformula il prompt nel formato ottimale per il LLM, colmando il gap tra come pensi e come il LLM riceve.</p> <div class="skill-example svelte-1y783e1"><h3 class="svelte-1y783e1">Esempio</h3> <div class="example-block svelte-1y783e1"><div class="example-label svelte-1y783e1">Tu scrivi</div> <p class="example-text svelte-1y783e1">Sento che il flusso di autenticazione ha un problema di timing ma non riesco a individuarlo</p></div> <div class="example-arrow svelte-1y783e1" data-svelte-h="svelte-1fkkkxg">↓</div> <div class="example-block output svelte-1y783e1"><div class="example-label svelte-1y783e1">La skill traduce</div> <p class="example-text svelte-1y783e1">Analizza il flusso di autenticazione cercando: 1) race condition tra token refresh e request, 2) stati non gestiti tra login e redirect. La mia intuizione dice che il problema e nel timing — verifica questa ipotesi prima.</p></div></div></div> <div class="skill-card svelte-1y783e1"><div class="skill-header svelte-1y783e1" data-svelte-h="svelte-1te4qoi"><span class="skill-cmd svelte-1y783e1">/thinking-bridge</span></div> <h2 class="svelte-1y783e1">Media tra profili</h2> <p class="skill-desc svelte-1y783e1">Prendi un messaggio e riformulalo per qualcuno con un profilo cognitivo diverso. Utile per comunicazione cross-team, onboarding, o spiegare concetti tecnici a non-tecnici.</p> <div class="skill-example svelte-1y783e1"><h3 class="svelte-1y783e1">Esempio</h3> <div class="example-block svelte-1y783e1"><div class="example-label svelte-1y783e1">Pensatore visivo scrive</div> <p class="example-text svelte-1y783e1">Il sistema ha tre layer, il middleware collega il gateway al database, il bottleneck e nel nodo centrale</p></div> <div class="example-arrow svelte-1y783e1" data-svelte-h="svelte-1fkkkxg">↓</div> <div class="example-block output svelte-1y783e1"><div class="example-label svelte-1y783e1">Pensatore narrativo riceve</div> <p class="example-text svelte-1y783e1">Quando un utente fa login, la sua richiesta attraversa tre tappe. Nella seconda — il middleware — rallenta perche deve aspettare il database. Come un semaforo rosso nel mezzo del percorso.</p></div></div></div></section> <section class="install-section svelte-1y783e1"><h2 class="svelte-1y783e1">Installazione</h2> <div class="install-steps svelte-1y783e1"><div class="step svelte-1y783e1"><span class="step-num svelte-1y783e1" data-svelte-h="svelte-1lmdv27">1</span> <div><p class="step-label svelte-1y783e1">Aggiungi il marketplace</p> <code class="svelte-1y783e1" data-svelte-h="svelte-1em7bg9">claude plugin marketplace add fullo/claude-plugins-marketplace</code></div></div> <div class="step svelte-1y783e1"><span class="step-num svelte-1y783e1" data-svelte-h="svelte-sgop92">2</span> <div><p class="step-label svelte-1y783e1">Installa il plugin</p> <code class="svelte-1y783e1" data-svelte-h="svelte-1jfvab2">claude plugin install thinking-habit@fullo-plugins</code></div></div> <div class="step svelte-1y783e1"><span class="step-num svelte-1y783e1" data-svelte-h="svelte-de8skt">3</span> <div><p class="step-label svelte-1y783e1">Profila il tuo pensiero</p> <code class="svelte-1y783e1" data-svelte-h="svelte-1cezxvh">/thinking-profile</code></div></div></div> <p class="install-note svelte-1y783e1">Richiede Claude Code CLI. Il profilo viene salvato in memoria e persiste tra sessioni.</p> <div class="install-links svelte-1y783e1"><a href="https://github.com/fullo/claude-thinking-habit" target="_blank" rel="noopener noreferrer" class="svelte-1y783e1" data-svelte-h="svelte-1nqfqpp">GitHub</a> <a href="https://fullo.github.io/claude-thinking-habit/" target="_blank" rel="noopener noreferrer" class="svelte-1y783e1">Sito del plugin</a> <a href="https://github.com/fullo/claude-plugins-marketplace" target="_blank" rel="noopener noreferrer" class="svelte-1y783e1" data-svelte-h="svelte-1kmp1vs">Marketplace</a></div></section> <div class="cta-row svelte-1y783e1"><a href="./quiz" class="cta svelte-1y783e1">Inizia il questionario</a> <a href="./about" class="cta-secondary svelte-1y783e1">About</a></div> </article></main> <footer class="site-footer svelte-1h9w37c" data-svelte-h="svelte-16f4mqn"><p>Based on cognitive science research. <a href="https://github.com/fullo/thinking-habit-discovery" class="footer-link svelte-1h9w37c">Open source</a>.</p> </footer> 
+			
+			<script>
+				{
+					__sveltekit_jhi90x = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						assets: "/thinking-habit-discovery"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.Ds_0-zCI.js"),
+						import("./_app/immutable/entry/app.Cr8d8-PV.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 8],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
